@@ -244,7 +244,6 @@ $(function(){
 		$.each(app.pages, function(p){
 			$(pageSelector + p). not($(pageSelector + name)).removeClass('in');
 		});
-		console.log(skip)
 		if(!skip){
 			gotoAnchor(name);
 		}
