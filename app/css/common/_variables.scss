@@ -1,0 +1,188 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #27ae60;
+
+@font-face { 
+	font-family: 'msjh-arial'; 
+	src:  local("Lantinghei")
+		, local('Noto Sans TC')
+		, local('微軟正黑體')
+		, local("STHeiti")
+		, local("メイリオ")
+		, local("Meiryo")
+		, local("ヒラギノ角ゴ Pro w3")
+		, local("Hiragino Kaku Gothic Pro")
+		, local("Osaka")
+		, local("STXihei")
+		, local("HEITI TC")
+		, local("黑體-繁")
+		, local("黑體");
+}
+@font-face {
+	font-family: 'msjh-arial';
+	src: local('Arial')
+		, local("Segoe UI")
+		, local("Verdana")
+		, local("ＭＳ Ｐゴシック")
+		, local("MS P Gothic")
+		, local("Helvetica Neue")
+		, local("Helvetica")
+		, local("sans-serif");
+	font-weight: normal;
+	font-style: normal;
+	unicode-range: U+00-024F;
+}
+
+$main-font: 'Open Sans','Lantinghei', 'Segoe UI', 'Noto Sans TC', 'microsoft jhenghei';
+$main-font-fallback:'Arial', 'Verdana', 'Lantinghei','Noto Sans TC', 'microsoft jhenghei', '微軟正黑體', 'Segoe UI';
+$base-font-size: 13px;
+$base-font-size-num: 13;
+$base-font-size-sm: 10px;
+
+.font-default{
+	font-family: $main-font, $main-font-fallback, cursive;
+}
+.fontsize-reset {
+	font-size: $base-font-size;
+}
+
+@for $i from 11 to 44 {
+	.fontsize-#{$i} {
+		font-size: #{$i}px;
+	}
+	.fontsize-percent-#{$i} {
+		font-size: percentage($i/$base-font-size-num);
+	}
+}
+
+$browser-xs-viewport: 320; // Default
+$browser-sm-viewport: 640; // Default
+$browser-md-viewport: 1170; // Default
+$browser-lg-viewport: 1920; // Default
+
+@function vwsm($pixels, $context: $browser-sm-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+
+@function vwxs($pixels, $context: $browser-xs-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+
+@function vwmd($pixels, $context: $browser-md-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+@function vwlg($pixels, $context: $browser-lg-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+@function vhlg($pixels, $context: 650) {
+  @return #{$pixels/$context*100}vh;
+}
+
+@mixin linear-gradient($direction, $color-stops) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+$font-default-color: #000b26;
+$font-default-hover-color: #333;
+
+@media screen and (max-width: 768px) {
+	@for $i from 11 to 44 {
+		.fontsize-sm-#{$i} {
+			font-size: vwsm($i);
+		}
+	}
+}
+@for $i from 0 to 100 {
+	.w#{$i}-percent{
+		width: #{$i+'%'};
+	}
+}
+@for $i from 0 to 2000 {
+
+	.baseline-pull-#{$i} {
+		margin-top: -#{$i}px;
+	}
+	.baseline-push-#{$i} {
+		margin-top: #{$i}px;
+	}
+	.baseline-shift-#{$i} {
+		margin-left: #{$i}px;
+	}
+	.baseline-deshift-#{$i} {
+		margin-left: -#{$i}px;
+	}
+	.ls-#{$i} {
+		letter-spacing: #{$i}px;
+	}
+	.ws-#{$i} {
+		word-spacing: #{$i}px;
+	}
+	.bws-#{$i} {
+		word-spacing: -#{$i}px;
+	}
+	.lh-#{$i} {
+		line-height: #{$i}px;
+	}
+	.block-centralize{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.nowrap{
+		white-space: nowrap;
+	}
+
+	// .baseline-pull-vw-#{$i} {
+	// 	margin-top: -#{$i}vw;
+	// }
+	// .baseline-push-vw-#{$i} {
+	// 	margin-top: #{$i}vw;
+	// }
+	// .baseline-shift-vw-#{$i} {
+	// 	margin-left: #{$i}vw;
+	// }
+	// .baseline-deshift-vw-#{$i} {
+	// 	margin-left: -#{$i}vw;
+	// }
+
+	// .baseline-pull-mvw-#{$i} {
+	// 	margin-top: -#{$i*0.1}vw;
+	// }
+	// .baseline-push-mvw-#{$i} {
+	// 	margin-top: #{$i*0.1}vw;
+	// }
+	// .baseline-shift-mvw-#{$i} {
+	// 	margin-left: #{$i*0.1}vw;
+	// }
+	// .baseline-deshift-mvw-#{$i} {
+	// 	margin-left: -#{$i*0.1}vw;
+	// }
+
+	// .baseline-pull-mvh-#{$i} {
+	// 	margin-top: -#{$i*0.1}vh;
+	// }
+	// .baseline-push-mvh-#{$i} {
+	// 	margin-top: #{$i*0.1}vh;
+	// }
+	// .baseline-shift-mvh-#{$i} {
+	// 	margin-left: #{$i*0.1}vh;
+	// }
+	// .baseline-deshift-mvh-#{$i} {
+	// 	margin-left: -#{$i*0.1}vh;
+	// }
+}
+@for $i from 0 to 1200 {
+	.w-#{$i} {
+		width: #{$i}px;
+	}
+
+}

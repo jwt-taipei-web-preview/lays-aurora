@@ -1,0 +1,59 @@
+.page#rule{
+	line-height: 100vh;
+	.center{		
+		display: inline-block;
+		line-height: 2;
+		color: #b2fdff;
+		width: 655px;
+		height: 390px;
+		position: relative;
+		background: url(../img/register/form-bg.png) center center/ 100% 100%;
+		.pane{
+			margin: 20px 15px 0 55px;
+			height: 350px;
+			overflow-y: auto;
+			overflow-x: hidden;
+
+		}
+		p{
+			position: relative;
+			margin:0;
+			padding-left: 5px;
+			&:before{
+				background: url(../img/rule/dot.png) no-repeat;
+				content: '';
+				position: absolute;
+				display: block;
+				width: 22px;
+				height: 31px;
+				top: 3px;
+				left: 0;
+			}
+			label{
+				font-weight: bold;
+				white-space: nowrap;
+			}
+			>span{
+				padding:0;
+				span{
+					vertical-align: baseline;
+				}
+			}
+			.highlight{
+				color: #fff274;
+				font-style: italic;
+				font-weight: 500;
+			}
+		}
+
+		.title{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			h3{
+				margin: 0 auto;
+			}
+		}
+	}
+}

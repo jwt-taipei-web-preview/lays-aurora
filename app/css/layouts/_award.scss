@@ -1,0 +1,41 @@
+.page#award{
+	line-height: 100vh;
+	.center{		
+		display: inline-block;
+		line-height: 2;
+		color: #b2fdff;
+		width: 655px;
+		height: 390px;
+		position: relative;
+		background: url(../img/register/form-bg.png) center center/ 100% 100%;
+		background-size: 100% 100%;
+	}
+	.pane{
+		margin: 20px 15px 0 55px;
+		height: 350px;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	.highlight{
+		color: #fff274;
+		font-style: italic;
+		font-weight: 500;
+		letter-spacing: 2px;
+	}
+	p{
+		position: relative;
+		.award{
+			position: absolute;
+			left: -60px;
+			top: -45px;
+		}
+		.award.award-2{
+			left: -61px;
+			top: -16px;
+		}
+	}
+	.participant{
+		color: #fff;
+		letter-spacing: 1px;
+	}
+}

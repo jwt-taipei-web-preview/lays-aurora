@@ -1,0 +1,115 @@
+.page#register {	
+	.center{
+		width:650px;
+		margin: 0 auto;
+		padding-top:vhlg(86);
+
+		form{
+			display: block;
+			padding: 35px 70px;
+			position: relative;
+			background: url(../img/register/form-bg.png) center center/ 100% 100%;
+			label{
+				color: #b2ffec;
+				padding: 0 5px;
+			}
+			input{
+				border-radius: 18px;
+				box-shadow: inset rgba(0, 65, 84,0.75) 1px 1px 4px;
+				border: 0;
+			}
+
+			.form-group{
+				line-height: 30px;
+			}
+			.term{
+				line-height: 20px;
+				color: #67f7e6;
+				font-weight: 100;
+				label{
+					cursor: pointer;
+					margin:0;
+				}
+
+				input{
+					visibility: hidden;
+
+					&:checked ~ span .checkbox.checked{
+						opacity: 1;
+						transform: none;
+					}
+				}
+				span{
+					padding: 0.5em 0 0 2em;
+					position: relative;
+				}
+				.checkbox{
+					position: absolute;
+					left:0;
+					top:0;
+					margin: 0;
+					&.checked{
+						transition-duration: 0.15s;
+						transform-origin: center bottom;
+						transform: scale(0.6);
+						opacity: 0;
+					}
+				}
+				a,a:hover,a:active,a:focus{
+					text-decoration: underline;
+					color:inherit;
+				}
+			}
+
+			.form{
+				button{
+					overflow: hidden;
+					background: none;
+					border: none;
+					box-shadow: none;
+				}
+			}
+			.complete{
+				display: none;
+				color: #fff;
+				position: absolute;
+				top:0;
+				width: 100%;
+				left:0;
+
+				h5{
+					margin:0;
+					padding: 75px 0 35px;
+					height: auto;
+				}
+				.highlight{
+					font-style: italic;
+					font-weight: 500;
+					color: #b2ffec;
+				}
+				.share{
+					margin: 35px 0;
+					display: inline-block;
+					position: relative;
+					img{
+						display: block;
+						position: absolute;
+						top:0;
+						left:0;
+						&.hover{
+							position: relative;
+						}
+					}
+				}
+			}
+
+		}
+		.invoice-container{
+			position: relative;
+		}
+		.add-container{
+			padding: 0;
+		}
+	}
+}
+

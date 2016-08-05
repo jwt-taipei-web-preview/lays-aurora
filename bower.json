@@ -1,0 +1,37 @@
+{
+  "name": "frontend",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1",
+    "gsap": "^1.19.0",
+    "font-awesome": "fontawesome#^4.6.3",
+<<<<<<< HEAD
+    "lodash": "^4.13.1",
+    "jScrollPane": "^2.0.23",
+    "jQuery-FontSpy": "fontspy#^3.0.0"
+=======
+    "lodash": "^4.13.1"
+>>>>>>> 991feabce9118daae7cdd565027badb9d8528377
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "less/font-awesome.less",
+        "scss/font-awesome.scss",
+        "fonts/*"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}

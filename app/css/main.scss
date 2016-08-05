@@ -1,0 +1,20 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "common/variables";
+@import "common/global";
+@import "common/webfonts";
+@import "common/shine";
+
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/index";
+@import "layouts/register";
+@import "layouts/rule";
+@import "layouts/award";
+
+
