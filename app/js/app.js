@@ -237,7 +237,7 @@ $(function(){
 		$.each(app.pages, function(p){
 			$(pageSelector + p). not($(pageSelector + name)).removeClass('in');
 		});
-		if(!skip && $(window).width() >= 1024){
+		if(!skip && !$('html').hasClas('desktop')){
 			gotoAnchor(name);
 		}
 	}

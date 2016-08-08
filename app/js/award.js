@@ -9,7 +9,7 @@
 app.pages.award = function($this){
 
 	$('.center', $this).on('mousewheel',function(){
-		if($(window).width() > 768){
+		if($('html').hasClas('desktop')){
 			return false;
 		}else{
 			return true;

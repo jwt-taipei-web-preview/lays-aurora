@@ -9,7 +9,7 @@
 app.pages.rule = function($this){
 	// console.log('rule initialized');
 	$('.center', $this).on('mousewheel',function(){
-		if($(window).width() > 768){
+		if($('html').hasClas('desktop')){
 			return false;
 		}else{
 			return true;
