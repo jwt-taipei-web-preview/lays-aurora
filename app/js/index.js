@@ -45,9 +45,9 @@ function lighten( page ){
 				'background-position': 'center bottom'
 			});
 		}else{
-			tlStack.push(l($('.container .light1', page), 1, 0) );
-			tlStack.push(l($('.container .light2', page), 2, 1.5) );
-			tlStack.push(bg($('.container .light-container', page), 10, 1) );
+			tlStack.push(l($('.container .light1'), 1, 0) );
+			tlStack.push(l($('.container .light2'), 2, 1.5) );
+			tlStack.push(bg($('.container .light-container'), 10, 1) );
 			tlStack.push(glitter($('.glitter', page), 2, 2) );
 			tlStack.push(spot($('.group-2 figure:eq(1)', page), 3, 2) );
 			tlStack.push(spot($('.group-3 figure:eq(1)', page), 3.2, 3) );
@@ -82,7 +82,7 @@ function lighten( page ){
 		function next(){
 			fig.addClass('active');
 		}
-		tl.addPause(duration + 0.5 * Math.random(), next);
+		tl.addPause(0.5 * Math.random(), next);
 		tl.play();
 
 		return tl;

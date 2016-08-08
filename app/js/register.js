@@ -24,6 +24,10 @@ app.pages.register = function($this){
 
 
 	$('.form', $this).on('mousewheel',function(){
-		return false;
+		if($(window).width() > 768){
+			return false;
+		}else{
+			return true;
+		}
 	});
 };
