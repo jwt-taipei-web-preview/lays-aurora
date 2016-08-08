@@ -43,7 +43,7 @@
             <img src="img/common/logo.png" alt="lays">
           </a>
         </h1>
-        <nav class="vertical-middle fontsize-14">
+        <nav class="vertical-middle fontsize-14 fontsize-sm-38">
           <a href="#register" class="nav-register">
             <img class="hover" src="img/header/register-hover.png">
             <span class="text">發票登錄</span>
@@ -59,14 +59,23 @@
           <a href="#index" class="nav-home">
             <img class="hover" src="img/header/home-hover.png">
             <img src="img/header/home.png">
+            <span class="text visible-sm-inline visible-xs-inline">回首頁</span>
+
           </a>
           <a href="javascript:" class="nav-fb">
             <img class="hover" src="img/header/fb-hover.png">
             <img src="img/header/fb.png">
+            <span class="text visible-sm-inline visible-xs-inline fontsize-sm-32">
+              <img class="visible-sm-inline-block visible-xs-inline-block" src="img/header/fb-m.png">
+              分享至FB
+            </span>
           </a>
         </nav>
-        <a href="javascript:" class="visible-xs burger">
+        <a href="javascript:" class="visible-sm visible-xs burger fade in">
           <img src="img/header/burger.png">
+        </a>
+        <a href="javascript:" class="visible-sm visible-xs close fade hide">
+          <img src="img/header/close.png">
         </a>
       </header>
 
@@ -115,47 +124,50 @@
 
       <section class="page" id="register">
         <aside class="center">
-          <h3 class="text-center"><img src="img/register/title.png" alt="立即登入發票抽 北歐秘境極光雙人遊!"></h3>
+          <h3 class="text-center">
+            <img class="hidden-sm hidden-xs" src="img/register/title.png" alt="立即登入發票抽 北歐秘境極光雙人遊!">
+            <img class="hidden-lg hidden-md" src="img/register/title-m.png" alt="立即登入發票抽 北歐秘境極光雙人遊!">
+          </h3>
           <form class="row">
-            <section class="form">
-              <aside class="form-group col-lg-12 col-md-12 invoice-container">
-                <label for="invoice" class="col-lg-4 col-md-4 text-right fontsize-21">發票號碼</label>
-                <aside class="baseline-deshift-15 baseline-deshift-15 col-lg-7 col-md-7">
-                  <input name="sInvoice" id="invoice" class="form-control  fontsize-17" type="text">
+            <section class="form fade in">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-container">
+                <label for="invoice" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">發票號碼</label>
+                <aside class="baseline-deshift-15 baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
+                  <input name="sInvoice" id="invoice" class="form-control  fontsize-sm-25" type="text">
                 </aside>
-                <aside class="col-lg-1 col-md-1 add-container">
+                <aside class="col-lg-1 col-md-1 col-sm-1 col-xs-1 add-container">
                   <a class="add vertical-top" href="javascript:"><img src="img/register/add.png"></a>
                 </aside>
               </aside>
-              <aside class="form-group col-lg-12 col-md-12">
-                <label for="name" class="col-lg-4 col-md-4 text-right fontsize-21">姓名</label>
-                <aside class="baseline-deshift-15 col-lg-7 col-md-7">
-                  <input name="sName" id="name" class="form-control  fontsize-17" type="text">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <label for="name" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">姓名</label>
+                <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
+                  <input name="sName" id="name" class="form-control  fontsize-sm-25" type="text">
                 </aside>
               </aside>
-              <aside class="form-group col-lg-12 col-md-12">
-                <label for="phone" class="col-lg-4 col-md-4 text-right fontsize-21">手機</label>
-                <aside class="baseline-deshift-15 col-lg-7 col-md-7">
-                  <input name="sMobile" id="phone" class="form-control  fontsize-17" type="text">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <label for="phone" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">手機</label>
+                <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
+                  <input name="sMobile" id="phone" class="form-control  fontsize-sm-25" type="text">
                 </aside>
               </aside>
-              <aside class="form-group col-lg-12 col-md-12">
-                <label for="email" class="col-lg-4 col-md-4 text-right fontsize-21">e-mail</label>
-                <aside class="baseline-deshift-15 col-lg-7 col-md-7">
-                  <input name="sEmail" id="email" class="form-control  fontsize-17" type="text">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <label for="email" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">e-mail</label>
+                <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
+                  <input name="sEmail" id="email" class="form-control  fontsize-sm-25" type="text">
                 </aside>
               </aside>
-              <aside class="form-group col-lg-12 col-md-12">
-                <label for="captcha" class="col-lg-4 col-md-4 text-right fontsize-21">驗證碼</label>
-                <aside class="baseline-deshift-15 col-lg-4 col-md-4">
-                  <input name="sValidateCode" id="captcha" class="form-control  fontsize-17" type="text">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <label for="captcha" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">驗證碼</label>
+                <aside class="baseline-deshift-15 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <input name="sValidateCode" id="captcha" class="form-control  fontsize-sm-25" type="text">
                 </aside>
-                <aside class="col-lg-3 col-md-3">
+                <aside class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="img/register/captcha.png">
                 </aside>
               </aside>
-              <aside class="form-group col-lg-12 col-md-12 text-center term baseline-deshift-30 nowrap">
-                <label class="col-lg-12 col-md-12">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center term baseline-deshift-30 nowrap text-left-sm text-left-xs">
+                <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <input type="checkbox" name="term">
                   <span>
                     <img src="img/register/checkbox.png" class="checkbox">
@@ -163,25 +175,26 @@
                   </span>
                 </label>
               </aside>
-              <aside class="form-group col-lg-12 col-md-12">
+              <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <aside class="button-group button-group w-430 row block-centralize">
-                  <button id="reset" class="col-lg-6 col-md-6">
+                  <button id="reset" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img src="img/register/reset.png">
                   </button>
-                  <button id="submit" class="col-lg-6 col-md-6">
+                  <button id="submit" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img src="img/register/submit.png">
                   </button>
                 </aside>
               </aside>
             </section>
             <input type="hidden" name="sAD">
-            <aside class="complete text-center">
-              <h5 class="fontsize-43">登錄完成</h5>
-              <p class="fontsize-20">
-                <span class="visible-lg visible-md">感謝您參與樂事幸福去哪旅活動</span>
-                <span class="visible-lg visible-md">立即分享至FB</span>
-                <span class="visible-lg visible-md">邀請親愛的他一起到
-                  <a href="javascript:" class="highlight">北歐秘境體驗幸福極光雙人遊</a>
+            <aside class="complete text-center hide">
+              <h5 class="fontsize-43 fontsize-sm-62">登錄完成</h5>
+              <hr class="visible-sm visible-xs">
+              <p class="fontsize-20 fontsize-sm-36">
+                <span class="visible-lg visible-md visible-sm visible-xs">感謝您參與樂事幸福去哪旅活動</span>
+                <span class="visible-lg visible-md visible-sm visible-xs">立即分享至FB</span>
+                <span class="visible-lg visible-md visible-sm visible-xs">邀請親愛的他一起到
+                  <a href="javascript:" class="highlight visible-lg-inline visible-md-inline visible-sm visible-xs">北歐秘境體驗幸福極光雙人遊</a>
                 </span>
                 <a class="share" href="javascript:">
                   <img src="img/register/share.png">
@@ -193,52 +206,52 @@
       </section>
 
       <section class="page text-center vertical-middle" id="rule">
-        <aside class="center fontsize-17 text-left">
+        <aside class="center fontsize-17 text-left fontsize-sm-23">
           <figure class="w100-percent text-center baseline-pull-105">
             <h3><img src="img/rule/title.png" alt="活動辦法"></h3>
           </figure>
           <aside class="pane">
             <p class="row">
-              <label class="col-lg-2 col-md-2">活動主題</label> 
-              <span class="col-lg-10 col-md-10">幸福去哪旅  買樂事抽北歐秘境極光雙人遊</span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">活動主題</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">幸福去哪旅  買樂事抽北歐秘境極光雙人遊</span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">活動期間</label> 
-              <span class="col-lg-10 col-md-10">2016/10/1~2016/11/30</span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">活動期間</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">2016/10/1~2016/11/30</span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">活動方式</label> 
-              <span class="col-lg-10 col-md-10">
-                <span class="visible-lg visible-md">2016/10/1-2016/11/30前購買樂事全系列商品，</span>
-                <span class="visible-lg visible-md">並登錄發票留下資料就有機會抽北歐秘境極光雙人遊等大獎</span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">活動方式</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                <span class="visible-lg visible-md visible-sm-inline visible-xs-inline">2016/10/1-2016/11/30前購買樂事全系列商品，</span>
+                <span class="visible-lg visible-md visible-sm-inline visible-xs-inline">並登錄發票留下資料就有機會抽北歐秘境極光雙人遊等大獎</span>
               </span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">活動獎項</label> 
-              <span class="col-lg-10 col-md-10 baseline-pull-5">
-                <span class="visible-lg visible-md">
-                  頭獎&nbsp;
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">活動獎項</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12 baseline-pull-5">
+                <span class="visible-lg visible-md visible-sm visible-xs">
+                  頭獎
                   <span class="highlight">北歐秘境極光雙人遊&nbsp;</span>
-                  <span class="fontsize-13">(價值新台幣339,800元)</span>，共1名</span>
-                <span class="visible-lg visible-md">二獎&nbsp;&nbsp;自在暢遊一萬元旅遊劵<span class="fontsize-13">(價值新台幣10,000元)</span>，共20名</span>
-                <span class="visible-lg visible-md">三獎&nbsp;&nbsp;寒舍艾美頂級饗宴，共100名</span>
+                  <span class="fontsize-13 fontsize-sm-16">(價值新台幣339,800元)</span>，共1名</span>
+                <span class="visible-lg visible-md visible-sm visible-xs">二獎&nbsp;自在暢遊一萬元旅遊劵<span class="fontsize-13 fontsize-sm-16">(價值新台幣10,000元)</span>，共20名</span>
+                <span class="visible-lg visible-md visible-sm visible-xs">三獎&nbsp;寒舍艾美頂級饗宴，共100名</span>
               </span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">抽獎日期</label> 
-              <span class="col-lg-10 col-md-10">活動結束後一週內統一抽獎</span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">抽獎日期</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">活動結束後一週內統一抽獎</span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">公布時間</label> 
-              <span class="col-lg-10 col-md-10">2016/12/08 </span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">公布時間</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">2016/12/08 </span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">兌獎期間</label> 
-              <span class="col-lg-10 col-md-10">2016/12/08~2016/12/16</span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">兌獎期間</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">2016/12/08~2016/12/16</span>
             </p>
             <p class="row">
-              <label class="col-lg-2 col-md-2">獎項寄送</label> 
-              <span class="col-lg-10 col-md-10">2016/12/31前寄送</span>
+              <label class="col-lg-2 col-md-2 col-sm-12 col-xs-12 fontsize-sm-27">獎項寄送</label> 
+              <span class="col-lg-10 col-md-10 col-sm-12 col-xs-12">2016/12/31前寄送</span>
             </p>
           </aside>
         </aside>
@@ -251,22 +264,22 @@
           </figure>
           <aside class="pane">
             <p class="baseline-push-42 baseline-shift-50">
-              <span class="fontsize-24 highlight">北歐秘境極光雙人遊</span>
-              <span class="fontsize-17 baseline-deshift-3">(價值新台幣339,800元)</span>
-              <span class="baseline-deshift-2">，共1名</span>
+              <span class="fontsize-24 fontsize-sm-47 highlight z-1 z-sm-1">北歐秘境極光雙人遊</span>
+              <span class="fontsize-17 fontsize-sm-26 baseline-deshift-3">(價值新台幣339,800元)</span>
+              <span class="baseline-deshift-2 fontsize-sm-26">，共1名</span>
               <img class="award head" src="img/award/head.png" alt="頭獎 北歐秘境極光雙人遊">
             </p>
             <p class="participant baseline-pull-15 baseline-shift-52">
-              <span class="visible-lg visible-md">
+              <span class="visible-lg visible-md visible-sm visible-xs">
                 <span>王x均</span>
                 <span class="baseline-shift-13">AA12345678</span>
               </span>
-              <a class="visible-lg visible-md baseline-pull-3 baseline-deshift-22" href="javascript:">
+              <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-deshift-22 baseline-push-sm-20 baseline-deshift-sm-35" href="javascript:">
                 <img src="img/award/btn-head.png">
               </a>
             </p>
-            <p class="baseline-pull-6 baseline-shift-51 ls-1">
-              <span >自在暢遊一萬元旅遊劵</span>
+            <p class="baseline-pull-6 baseline-shift-51 ls-1 baseline-push-sm-90">
+              <span class="z-1 z-sm-1">自在暢遊一萬元旅遊劵</span>
               <span class="fontsize-17 baseline-deshift-3">(價值新台幣10,000元)</span>
               <span class="baseline-deshift-7">，共20名</span>
               <img class="award award-2" src="img/award/2.png" alt="二獎 自在暢遊一萬元旅遊劵">
@@ -274,25 +287,25 @@
             <p class="participant baseline-pull-5 baseline-shift-36 fontsize-16 row lh-21 bws-5 w-415">
               <script>
                 for(var i=0;i<20;i++){
-                  document.write('<span class="visible-lg visible-md  col-lg-6 col-md-6"><span>王x均</span><span class="baseline-shift-13 ls-0">AA12345678</span></span>');
+                  document.write('<span class="visible-lg visible-md visible-sm visible-xs"><span>王x均</span><span class="baseline-shift-13 ls-0">AA12345678</span></span>');
                 }
               </script>   
             </p>
-            <a class="visible-lg visible-md baseline-pull-3 baseline-shift-25" href="javascript:">
+            <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-shift-25 baseline-shift-sm-23" href="javascript:">
               <img src="img/award/btn-2.png">
             </a> 
-            <p class="baseline-push-10 baseline-shift-51 ls-1">
+            <p class="baseline-push-10 baseline-shift-51 baseline-push-sm-90 ls-1">
               <span >寒舍艾美頂級饗宴，共100名</span>
               <img class="award award-2" src="img/award/3.png" alt="三獎 寒舍艾美頂級饗宴">
             </p>
             <p class="participant baseline-pull-5 baseline-shift-36 fontsize-16 row lh-21 bws-5 w-415">
               <script>
                 for(var i=0;i<100;i++){
-                  document.write('<span class="visible-lg visible-md  col-lg-6 col-md-6"><span>王x均</span><span class="baseline-shift-13 ls-0">AA12345678</span></span>');
+                  document.write('<span class="visible-lg visible-md visible-sm visible-xs"><span>王x均</span><span class="baseline-shift-13 ls-0">AA12345678</span></span>');
                 }
               </script>
             </p>       
-            <a class="visible-lg visible-md baseline-pull-3 baseline-shift-25" href="javascript:">
+            <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-shift-25  baseline-pull-sm-20 baseline-shift-sm-25" href="javascript:">
               <img src="img/award/btn-3.png">
             </a>   
           </p>
@@ -348,6 +361,9 @@
     <script src="js/rule.js"></script>
     <script src="js/register.js"></script>
     <script src="js/award.js"></script>
+
+    <script src="js/menu.js"></script>
+    <script src="js/ga.js"></script>
     <!-- endbuild -->
   </body>
 </html>

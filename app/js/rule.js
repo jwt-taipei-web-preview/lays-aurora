@@ -9,7 +9,11 @@
 app.pages.rule = function($this){
 	// console.log('rule initialized');
 	$('.center', $this).on('mousewheel',function(){
-		return false;
+		if($(window).width() > 768){
+			return false;
+		}else{
+			return true;
+		}
 	});
 	$('.pane', $this).jScrollPane();
 };

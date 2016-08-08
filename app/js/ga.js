@@ -5,7 +5,7 @@
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global  $, app, ga */
-app.ga = function(){
+app.modules.ga = function(){
 	// console.log('ga initialized');
 
 	// 上方選單

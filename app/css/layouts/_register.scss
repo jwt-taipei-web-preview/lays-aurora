@@ -3,12 +3,37 @@
 		width:650px;
 		margin: 0 auto;
 		padding-top:vhlg(86);
+		@media screen and (max-width: 768px) {
+			padding-top:vwsm(60);
+			width: vwsm(608);
+			h3{
+				img{
+					width: 100%;
+				}
+			}
+		}
 
 		form{
 			display: block;
 			padding: 35px 70px;
 			position: relative;
 			background: url(../img/register/form-bg.png) center center/ 100% 100%;
+			@media screen and (max-width: 768px) {				
+				padding: vwsm(55) 0;			
+				margin: 0 vwsm(-5);
+				background: url(../img/award/bg-m.png) center center/ 100% 100%;
+				border: vwsm(5) solid;
+				border-image: -moz-linear-gradient(250deg, rgba(78,127,229, 0.45) 0%, rgba(255,255,255, 0.45) 50%, rgba(185,70,244, 0.45) 100%) 10 stretch; /* FF3.6-15 */
+				border-image: -webkit-linear-gradient(250deg, rgba(78,127,229, 0.45) 0%,rgba(255,255,255, 0.45) 50%,rgba(185,70,244, 0.45) 100%) 10 stretch; /* Chrome10-25,Safari5.1-6 */
+				border-image: linear-gradient(250deg, rgba(78,127,229, 0.45) 0%,rgba(255,255,255, 0.45) 50%,rgba(185,70,244, 0.45) 100%) 10 stretch; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+				@for $i from 1 to 13 {
+					.col-sm-#{$i}, .col-xs-#{$i} {
+						padding-left: vwsm(6);
+						padding-right: vwsm(6);
+					}
+				}
+			}
 			label{
 				color: #b2ffec;
 				padding: 0 5px;
@@ -33,6 +58,7 @@
 
 				input{
 					visibility: hidden;
+					width: 0;
 
 					&:checked ~ span .checkbox.checked{
 						opacity: 1;
@@ -42,6 +68,7 @@
 				span{
 					padding: 0.5em 0 0 2em;
 					position: relative;
+					display: inline-block;
 				}
 				.checkbox{
 					position: absolute;
@@ -68,19 +95,48 @@
 					border: none;
 					box-shadow: none;
 				}
+				@media screen and (max-width: 768px) {
+					margin: vwsm(20) 0 0 vwsm(10);
+					width: vwsm(620 - 20)!important;
+					height: auto !important;
+					overflow-y: auto;
+					overflow-x: hidden;
+					.jspPane,.jspContainer{
+						width: 100% !important;
+						height: auto !important;
+						position: relative;
+						top: 0 !important;
+						left: 0 !important;
+					}
+					.jspVerticalBar,.jspHorizontalBar{
+						display: none;
+					}
+				}
 			}
 			.complete{
-				display: none;
+				// display: none;
 				color: #fff;
 				position: absolute;
 				top:0;
 				width: 100%;
 				left:0;
+				@media screen and (max-width: 768px) {
+					// position: relative;
+				}
 
 				h5{
 					margin:0;
 					padding: 75px 0 35px;
 					height: auto;
+					@media screen and (max-width: 768px) {
+						margin: 0;
+						padding: vwsm(120) 0 vwsm(30);
+					}
+				}
+				hr{
+					background: url(../img/register/hr.png) center/auto 100% no-repeat;
+					border:0;
+					height: vwsm(1);
 				}
 				.highlight{
 					font-style: italic;
@@ -92,14 +148,17 @@
 					display: inline-block;
 					position: relative;
 					img{
-						display: block;
-						position: absolute;
-						top:0;
-						left:0;
-						&.hover{
-							position: relative;
-						}
+						width: 100%;
 					}
+					@media screen and (max-width: 768px) {
+						margin: vwsm(35) 0;
+					}
+				}
+			}
+
+			button{
+				img{
+					width: 100%;
 				}
 			}
 
@@ -109,6 +168,13 @@
 		}
 		.add-container{
 			padding: 0;
+			a{
+				vertical-align: middle;
+				img{
+					vertical-align: middle;
+					width: 100%;
+				}
+			}
 		}
 	}
 }

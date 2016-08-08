@@ -17,6 +17,7 @@ var pageSelector = '.page#';
 
 app.ranges = {};
 app.pages = {};
+app.modules = {};
 app.scrollTop = scrollTop;
 app.activeSection = activeSection;
 app.pageSelector = pageSelector;
@@ -45,6 +46,16 @@ var share = {
 	}
 };
 
+//判斷是否具有屬性
+$.fn.hasAttr = function(attributeName){
+	var attr = $(this).attr(attributeName);
+	if (typeof attr !== typeof undefined && attr !== false) {
+		return true;
+	}else{
+		return false;
+	}
+};
+
 var global = {};
 
 
@@ -57,6 +68,9 @@ if (location.hash) {
 
 $(function(){
     // 定義每個section
+	$.each(app.modules, function(name, init){
+		init();
+	});
 	$.each(app.pages, function(name, init){
 		if($(pageSelector + name).length) {
 			try{
@@ -99,6 +113,7 @@ $(function(){
 		});
 	}
 
+	app.gotoAnchor = gotoAnchor;
 
 
 	//觸發第一次調整頁面尺寸
@@ -111,30 +126,8 @@ $(function(){
 	// });
 
 	var skip;
-	//下錨點的按鈕
-	$('a').filter(function(){
-		var href = $(this).attr('href');
-		return /^[#]/.test(href);
-	}).on('click', function(e){
 
-		skip = true;
-
-		var href = $(this).attr('href').replace(/[#]/ig, '');
-
-		$(this).addClass('active').siblings().removeClass('active');
-
-		gotoAnchor(href);
-
-		$('body').removeClass('overlay');
-
-		$(pageSelector + href).addClass('in');
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
+	app.skip = skip;
 
 	//分享按鈕
 
@@ -244,7 +237,7 @@ $(function(){
 		$.each(app.pages, function(p){
 			$(pageSelector + p). not($(pageSelector + name)).removeClass('in');
 		});
-		if(!skip){
+		if(!skip && $(window).width() >= 1024){
 			gotoAnchor(name);
 		}
 	}
@@ -280,15 +273,6 @@ $(function(){
 		return result;
 	}
 
-	//判斷是否具有屬性
-	$.fn.hasAttr = function(attributeName){
-		var attr = $(this).attr(attributeName);
-		if (typeof attr !== typeof undefined && attr !== false) {
-			return true;
-		}else{
-			return false;
-		}
-	};
 
 
 });

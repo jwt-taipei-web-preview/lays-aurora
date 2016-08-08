@@ -8,17 +8,59 @@
 		height: 390px;
 		position: relative;
 		background: url(../img/register/form-bg.png) center center/ 100% 100%;
+		@media screen and (max-width: 768px) {
+			background: url(../img/award/bg-m.png) center center/ 100% 100%;
+			border: vwsm(5) solid;
+			border-image: -moz-linear-gradient(250deg, rgba(78,127,229, 0.45) 0%, rgba(255,255,255, 0.45) 50%, rgba(185,70,244, 0.45) 100%) 10 stretch; /* FF3.6-15 */
+			border-image: -webkit-linear-gradient(250deg, rgba(78,127,229, 0.45) 0%,rgba(255,255,255, 0.45) 50%,rgba(185,70,244, 0.45) 100%) 10 stretch; /* Chrome10-25,Safari5.1-6 */
+			border-image: linear-gradient(250deg, rgba(78,127,229, 0.45) 0%,rgba(255,255,255, 0.45) 50%,rgba(185,70,244, 0.45) 100%) 10 stretch; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			width: vwsm(620);
+			height: auto;
+			vertical-align: top;
+			margin-top: vwsm(150);
+			margin-left: -0.3em;
+			line-height: 1.5;
+
+			>figure{
+				margin-top: vwsm(-140);
+				img{
+					height: vwsm(120);
+				}
+			}
+		}
 		.pane{
 			margin: 20px 15px 0 55px;
 			height: 350px;
 			overflow-y: auto;
 			overflow-x: hidden;
+			@media screen and (max-width: 768px) {
+				margin: vwsm(20) 0 0 vwsm(10);
+				width: vwsm(620 - 20)!important;
+				height: auto !important;
+				overflow-y: auto;
+				overflow-x: hidden;
+				.jspPane,.jspContainer{
+					width: 100% !important;
+					height: auto !important;
+					position: relative;
+					top: 0 !important;
+					left: 0 !important;
+				}
+				.jspVerticalBar,.jspHorizontalBar{
+					display: none;
+				}
+			}
 
 		}
 		p{
 			position: relative;
 			margin:0;
 			padding-left: 5px;
+			@media screen and (max-width: 768px) {
+				margin-bottom: vwsm(20);
+				letter-spacing: 0;
+				padding: 0 vwsm(10);
+			}
 			&:before{
 				background: url(../img/rule/dot.png) no-repeat;
 				content: '';
@@ -28,13 +70,28 @@
 				height: 31px;
 				top: 3px;
 				left: 0;
+				@media screen and (max-width: 768px) {
+					background: url(../img/rule/dot.png) no-repeat 0 0/cover;
+					width: vwsm(32);
+					height: vwsm(44);
+					line-height: vwsm(30);
+					top: vwsm(0);
+				}
 			}
 			label{
 				font-weight: bold;
 				white-space: nowrap;
+				@media screen and (max-width: 768px) {
+					margin:0;
+					color: #fff;
+					padding: 0 vwsm(15);
+				}
 			}
 			>span{
 				padding:0;
+				@media screen and (max-width: 768px) {
+					padding: 0 vwsm(0) 0 vwsm(10); 
+				}
 				span{
 					vertical-align: baseline;
 				}
@@ -43,6 +100,9 @@
 				color: #fff274;
 				font-style: italic;
 				font-weight: 500;
+				@media screen and (max-width: 768px) {
+					font-size: vwsm(28);
+				}
 			}
 		}
 

@@ -113,16 +113,99 @@ header {
 
 	@media screen and (max-width: 768px) {
 
-		.burger{
+		.burger, .close{
 			z-index: 50;
 			position: absolute;
 			top:0;
 			right: 0;
-			margin: vwsm(20) vwsm(20) 0 0;
 			opacity: inherit;
+			&.fade{
+				opacity: 0;
+				&.in{
+					opacity: 1;
+				}
+			}
+			&.hide{
+				display: none !important;
+			}
 
 			img{
-				width: vwsm(60);
+				width: vwsm(114);
+			}
+		}
+		.close{
+			img{
+				width: vwsm(109);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	body.menu{
+		header{
+			height: 100vh;
+			width: 100%;
+			position: fixed;
+			background: #000e29;
+			overflow-y: auto;
+			overflow-x: hidden;
+			nav{
+				padding-top: vwsm(225);
+				height: 100vh;
+				width: 100%;
+				display: block;
+				background: none;
+				&:before{
+					display: none;
+				}
+				a{
+					color: #fff;
+					display: block;
+					margin:0;
+					width: 100%;
+					text-align: center;
+					img{
+						display: none;
+					}
+					.text{
+						position: relative;
+						padding: 0;
+						text-shadow: rgba( 145, 255, 243, 1) 0 0 vwsm(38);
+						font-weight: 400;
+						letter-spacing: 0.35em;
+						text-align: center;
+						display: inline-block;
+						line-height: vwsm(100);
+						height: vwsm(100);
+						img{
+							opacity: 1;
+							margin-top: vwsm(-6);
+						}
+					}
+					&.nav-home{
+						.text{
+							letter-spacing: 1em;
+							padding: 0 0 0 0.7em;
+						}
+					}
+					&.nav-fb{
+						.text{
+							letter-spacing: 0;
+							img{
+								width: vwsm(40);
+							}
+						}
+					}
+					&:before{
+						display: block;
+						width: 100%;
+						height: vwsm(5);
+						content: '';
+						background: url(../img/header/line.png) 0 0/cover;
+					}
+				}
 			}
 		}
 	}
