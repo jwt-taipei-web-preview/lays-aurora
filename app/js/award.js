@@ -9,11 +9,13 @@
 app.pages.award = function($this){
 
 	$('.center', $this).on('mousewheel',function(){
-		if($('html').hasClas('desktop')){
-			return false;
+		return app.ismobile();
+	});
+	$(window).on('resize', function(){
+		if($('.pane', $this).data('jsp')){
+			$('.pane', $this).data('jsp').reinitialise();
 		}else{
-			return true;
+			$('.pane', $this).jScrollPane();
 		}
 	});
-	$('.pane', $this).jScrollPane();
 };

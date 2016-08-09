@@ -23,6 +23,7 @@
     
     <!-- build:js js/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
   <body>
@@ -36,7 +37,9 @@
         <figure class="light light1 active"></figure>
         <figure class="light light2"></figure>
       </aside>
-      <figure class="house"></figure>
+      <figure class="house">
+          <img src="img/index/house-m.png" class="visible-md visible-sm" style="position:fixed;bottom:0;left:0;width:100vw;min-height:100vh">
+      </figure>
       <header>
         <h1>
           <a href="javascript:">
@@ -263,49 +266,51 @@
             <h3><img src="img/award/title.png" alt="中獎名單"></h3>
           </figure>
           <aside class="pane">
-            <p class="baseline-push-42 baseline-shift-50">
+            <p class="baseline-push-50 baseline-shift-60">
               <span class="fontsize-24 fontsize-sm-47 highlight z-1 z-sm-1">北歐秘境極光雙人遊</span>
               <span class="fontsize-17 fontsize-sm-26 baseline-deshift-3">(價值新台幣339,800元)</span>
-              <span class="baseline-deshift-2 fontsize-sm-26">，共1名</span>
+              <span class="baseline-deshift-2 fontsize-sm-26 baseline-push-sm-20">，共1名</span>
               <img class="award head" src="img/award/head.png" alt="頭獎 北歐秘境極光雙人遊">
             </p>
-            <p class="participant baseline-pull-15 baseline-shift-52">
+            <p class="participant baseline-push-10 baseline-shift-62">
               <span class="visible-lg visible-md visible-sm visible-xs">
                 <span>王x均</span>
-                <span class="baseline-shift-13">AA12345678</span>
+                <span class="baseline-shift-13 baseline-shift-sm-20">AA12345678</span>
               </span>
-              <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-deshift-22 baseline-push-sm-20 baseline-deshift-sm-20" href="javascript:">
+              <a class="visible-lg visible-md visible-sm visible-xs baseline-push-15 baseline-deshift-22 baseline-push-sm-25 baseline-deshift-sm-45" href="javascript:">
                 <img src="img/award/btn-head.png">
               </a>
             </p>
-            <p class="baseline-pull-6 baseline-shift-51 ls-1 baseline-push-sm-90">
-              <span class="z-1 z-sm-1">自在暢遊一萬元旅遊劵</span>
-              <span class="fontsize-17 fontsize-sm-26 baseline-deshift-3">(價值新台幣10,000元)</span>
-              <span class="baseline-deshift-7">，共20名</span>
+            <p class="baseline-push-15 baseline-shift-64 ls-1 baseline-push-sm-40">
+              <span class="z-1 z-sm-1 fontsize-sm-36 italic-sm bold-sm">自在暢遊一萬元旅遊劵</span>
+              <span class="visible-lg-inline visible-md-inline visible-sm visible-xs">
+                <span class="fontsize-17 fontsize-sm-26 baseline-deshift-3">(價值新台幣10,000元)</span>
+                <span class="baseline-deshift-7">，共20名</span>
+              </span>
               <img class="award award-2" src="img/award/2.png" alt="二獎 自在暢遊一萬元旅遊劵">
             </p>
-            <p class="participant baseline-pull-5 baseline-shift-36 fontsize-16 fontsize-sm-20 row lh-21 bws-5 w-415">
+            <p class="participant baseline-push-15 baseline-shift-65 fontsize-16 fontsize-sm-20 row lh-21 bws-5 w-415 baseline-pull-sm-20 ">
               <script>
                 for(var i=0;i<20;i++){
-                  document.write('<span class="visible-lg visible-md visible-sm visible-xs"><span>王x均</span><span class="baseline-shift-13 ls-0 baseline-shift-20">AA12345678</span></span>');
+                  document.write('<span class="visible-lg visible-md visible-sm visible-xs"><span>王x均</span><span class="baseline-shift-13 ls-0 baseline-shift-sm-20">AA12345678</span></span>');
                 }
               </script>   
             </p>
-            <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-shift-25 baseline-shift-sm-42" href="javascript:">
+            <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-shift-42 baseline-shift-sm-15" href="javascript:">
               <img src="img/award/btn-2.png">
             </a> 
-            <p class="baseline-push-10 baseline-shift-51 baseline-push-sm-90 ls-1">
+            <p class="baseline-push-15 baseline-shift-64 ls-1 baseline-push-sm-90">
               <span >寒舍艾美頂級饗宴，共100名</span>
               <img class="award award-2" src="img/award/3.png" alt="三獎 寒舍艾美頂級饗宴">
             </p>
-            <p class="participant baseline-pull-5 baseline-shift-36 fontsize-16 fontsize-sm-20 row lh-21 bws-5 w-415">
+            <p class="participant baseline-push-15 baseline-shift-65 fontsize-16 fontsize-sm-20 row lh-21 bws-5 w-415">
               <script>
                 for(var i=0;i<100;i++){
-                  document.write('<span class="visible-lg visible-md visible-sm visible-xs"><span>王x均</span><span class="baseline-shift-13 ls-0 baseline-shift-20">AA12345678</span></span>');
+                  document.write('<span class="visible-lg visible-md visible-sm visible-xs"><span>王x均</span><span class="baseline-shift-13 ls-0 baseline-shift-sm-20">AA12345678</span></span>');
                 }
               </script>
             </p>       
-            <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-shift-25  baseline-pull-sm-20 baseline-shift-sm-25" href="javascript:">
+            <a class="visible-lg visible-md visible-sm visible-xs baseline-pull-3 baseline-shift-25  baseline-pull-sm-20 baseline-shift-sm-15" href="javascript:">
               <img src="img/award/btn-3.png">
             </a>   
           </p>

@@ -32,7 +32,7 @@
 		}
 	}
 	.pane{
-		margin: 20px 15px 0 55px;
+		margin: 20px 15px 0 40px;
 		height: 350px;
 		overflow-y: auto;
 		overflow-x: hidden;
@@ -55,6 +55,9 @@
 			.jspVerticalBar,.jspHorizontalBar{
 				display: none;
 			}
+		}
+		.jspPane{
+			margin-left: 0!important;
 		}
 	}
 	.highlight{

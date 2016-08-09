@@ -101,6 +101,10 @@ $(function(){
 
 	//捲動到錨點處
 	function gotoAnchor(anchor){
+		if(app.ismobile){
+			return;
+		}
+
 		anchor = anchor || location.hash.replace('#','');
 
 		if(!anchor) return;
@@ -237,7 +241,7 @@ $(function(){
 		$.each(app.pages, function(p){
 			$(pageSelector + p). not($(pageSelector + name)).removeClass('in');
 		});
-		if(!skip && !$('html').hasClas('desktop')){
+		if(!skip){
 			gotoAnchor(name);
 		}
 	}
@@ -276,6 +280,15 @@ $(function(){
 
 
 });
+
+
+app.ismobile = function(){
+
+	if($(window).width() <= 768 || !$('html').hasClass('desktop')){
+		return true;
+	}
+	return false;
+}
 
 
 

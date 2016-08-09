@@ -40,7 +40,7 @@ $brand-primary:         #27ae60;
 }
 
 $main-font: 'Open Sans','Lantinghei', 'Segoe UI', 'Noto Sans TC', 'microsoft jhenghei';
-$main-font-fallback:'Arial', 'Verdana', 'Lantinghei','Noto Sans TC', 'microsoft jhenghei', '微軟正黑體', 'Segoe UI';
+$main-font-fallback:'Arial', 'Verdana', 'Lantinghei','microsoft jhenghei','微軟正黑體', 'Noto Sans TC',  'Segoe UI';
 $base-font-size: 13px;
 $base-font-size-num: 13;
 $base-font-size-sm: 10px;
@@ -134,9 +134,11 @@ $font-default-hover-color: #333;
 	}
 	@media screen and (max-width: 768px) {
 		.baseline-pull-sm-#{$i} {
+			display: inline-block;
 			margin-top: -#{vwsm($i)};
 		}
 		.baseline-push-sm-#{$i} {
+			display: inline-block;
 			margin-top: #{vwsm($i)};
 		}
 		.baseline-shift-sm-#{$i} {
@@ -207,15 +209,41 @@ $font-default-hover-color: #333;
 	// 	margin-left: -#{$i*0.1}vh;
 	// }
 }
-.block-centralize{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
 
-.nowrap{
-	@media screen and (min-width: 769px) {
+
+@media screen and (min-width: 769px) {
+
+	.block-centralize{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.block{
+		display: block;
+	}
+	.inline-block{
+		display: inline-block;
+	}
+	.inline{
+		display: inline;
+	}
+
+	.italic{
+		font-style: italic;
+	}
+
+	.nowrap{
 		white-space: nowrap;
+	}
+}
+@media screen and (max-width: 768px) {
+
+	.italic-sm{
+		font-style: italic;
+	}
+	.bold-sm{
+		font-weight: bold;
 	}
 }
 

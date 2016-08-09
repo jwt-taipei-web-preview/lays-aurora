@@ -23,11 +23,7 @@ app.pages.register = function($this){
 	});
 
 
-	$('.form', $this).on('mousewheel',function(){
-		if($('html').hasClas('desktop')){
-			return false;
-		}else{
-			return true;
-		}
+	$('.form', $this).on('mousewheel scroll',function(){
+		return app.ismobile();
 	});
 };

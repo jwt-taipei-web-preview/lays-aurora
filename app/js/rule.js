@@ -8,12 +8,15 @@
 /*global app, $ */
 app.pages.rule = function($this){
 	// console.log('rule initialized');
-	$('.center', $this).on('mousewheel',function(){
-		if($('html').hasClas('desktop')){
-			return false;
+	
+	$('.center', $this).on('mousewheel scroll',function(){
+		return app.ismobile();
+	});
+	$(window).on('resize', function(){
+		if($('.pane', $this).data('jsp')){
+			$('.pane', $this).data('jsp').reinitialise();
 		}else{
-			return true;
+			$('.pane', $this).jScrollPane();
 		}
 	});
-	$('.pane', $this).jScrollPane();
 };

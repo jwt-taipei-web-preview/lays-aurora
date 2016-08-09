@@ -85,10 +85,18 @@ html{
 			min-width: 320px;
 		}
 	}
-	&.ie,&.firefox.windows{
-		body{
-			font-family: $main-font-fallback;
+	&.desktop.windows{
+		// body{
+		header nav a .text{
+			font-weight: bold;
 		}
+		#index .wording,
+		#register .form-group label
+		#award .pane p{			
+			font-family: $main-font-fallback;
+			font-weight: bold;
+		}
+		// }
 	}
 	&:after{
 		z-index: 200;
