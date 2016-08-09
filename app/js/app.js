@@ -288,7 +288,7 @@ app.ismobile = function(){
 		return true;
 	}
 	return false;
-}
+};
 
 
 
