@@ -227,8 +227,12 @@
 	top: 0;
 	left: 0;
 	background: url(../img/index/house.png) center bottom/cover no-repeat fixed;
-	@media screen and (max-width: 768px) {
-		background: url(../img/index/house-m.png) center bottom/cover no-repeat fixed;
+	@media screen and (max-width: 768px) {		
+		width: 100%;
+		height: 100%;
+		top: auto;
+		bottom:0;
+		background: url(../img/index/house-m.png) center bottom/cover no-repeat;
 	}
 }
 .light{

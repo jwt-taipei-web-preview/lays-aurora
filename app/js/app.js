@@ -95,7 +95,7 @@ $(function(){
 
 	//resize
 	$(window).on('resize',	function(){
-		if(!$('html').hasClass('mobile')){
+		if(!app.ismobile()){
 			gotoAnchor();
 		}
 	});
@@ -153,6 +153,43 @@ $(function(){
 		return false;
 	});
 
+	// 捲動至錨點時網址轉換
+	$(window).on('scroll', function(){
+
+		if(app.skip || app.ismobile()){
+			return;
+		}
+		var currentTop = $(window).scrollTop();
+		var currentButt = $(window).scrollTop() + $(window).height();
+		$.each(app.pages, function(name, init){
+
+			var id = $(pageSelector + name).attr('id'),
+
+
+			range = app.ranges[id],
+			space = $(window).height();
+
+
+			if(scrollTop < currentTop){
+				if(range.butt() >= currentButt && range.top() >= currentTop && range.top() < currentButt){
+
+					if(activeSection != id){
+						activeSection = id;
+						pushState(name);
+					}
+				} 
+			}else{
+				if(range.top() <= currentTop && range.butt() > currentTop && range.butt() <= currentButt){
+
+					if(activeSection != id){
+						activeSection = id;
+						pushState(name);
+					}
+				} 
+			}
+		});
+		scrollTop = currentTop;
+	});
 
 	gotoAnchor();
 
@@ -178,6 +215,10 @@ $(function(){
 	}, 100);
 
 	function pushState(name){
+
+		// if(app.ismobile()){
+		// 	return false;
+		// }
 
 		history.pushState('#' + activeSection, document.title, '#' + activeSection);
 		$('header nav a').filter(function(){

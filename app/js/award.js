@@ -8,7 +8,7 @@
 /*global app, $ */
 app.pages.award = function($this){
 
-	$('.center', $this).on('mousewheel',function(){
+	$('.center', $this).on('mousewheel scroll',function(){
 		return app.ismobile();
 	});
 	$(window).on('resize', function(){
