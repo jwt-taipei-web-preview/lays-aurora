@@ -21,6 +21,7 @@ app.modules = {};
 app.scrollTop = scrollTop;
 app.activeSection = activeSection;
 app.pageSelector = pageSelector;
+app.skip = false;
 
 // var dayOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -101,7 +102,7 @@ $(function(){
 
 	//捲動到錨點處
 	function gotoAnchor(anchor){
-		if(app.ismobile){
+		if(app.ismobile() && !anchor){
 			return;
 		}
 
@@ -112,7 +113,7 @@ $(function(){
 		TweenMax.to('html, body', 0.5, {
 			scrollTop: $(pageSelector + anchor).offset().top,
 			onComplete: function(){
-				skip = false;
+				app.skip = false;
 			}
 		});
 	}
@@ -128,10 +129,6 @@ $(function(){
 	// $('.burger').on('click', function(){
 	// 	$('body').toggleClass('overlay');
 	// });
-
-	var skip;
-
-	app.skip = skip;
 
 	//分享按鈕
 
@@ -168,7 +165,7 @@ $(function(){
 	// 捲動至錨點時網址轉換
 	$(window).on('scroll', function(){
 
-		if(skip){
+		if(app.skip){
 			return;
 		}
 		var currentTop = $(window).scrollTop();
@@ -241,7 +238,7 @@ $(function(){
 		$.each(app.pages, function(p){
 			$(pageSelector + p). not($(pageSelector + name)).removeClass('in');
 		});
-		if(!skip){
+		if(!app.skip){
 			gotoAnchor(name);
 		}
 	}

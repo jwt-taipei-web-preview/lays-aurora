@@ -116,7 +116,7 @@ $font-default-hover-color: #333;
 		}
 	}
 }
-@for $i from 0 to 2000 {
+@for $i from 0 to 520 {
 
 	@media screen and (min-width: 769px) {
 		.baseline-pull-#{$i} {
@@ -130,6 +130,18 @@ $font-default-hover-color: #333;
 		}
 		.baseline-deshift-#{$i} {
 			margin-left: -#{$i}px;
+		}
+		.ls-#{$i} {
+			letter-spacing: #{$i}px;
+		}
+		.ws-#{$i} {
+			word-spacing: #{$i}px;
+		}
+		.bws-#{$i} {
+			word-spacing: -#{$i}px;
+		}
+		.lh-#{$i} {
+			line-height: #{$i}px;
 		}
 	}
 	@media screen and (max-width: 768px) {
@@ -146,26 +158,6 @@ $font-default-hover-color: #333;
 		}
 		.baseline-deshift-sm-#{$i} {
 			margin-left: -#{vwsm($i)};
-		}
-	}
-	.ls-#{$i} {
-		@media screen and (min-width: 769px) {
-			letter-spacing: #{$i}px;
-		}
-	}
-	.ws-#{$i} {
-		@media screen and (min-width: 769px) {
-			word-spacing: #{$i}px;
-		}
-	}
-	.bws-#{$i} {
-		@media screen and (min-width: 769px) {
-			word-spacing: -#{$i}px;
-		}
-	}
-	.lh-#{$i} {
-		@media screen and (min-width: 769px) {
-			line-height: #{$i}px;
 		}
 	}
 	// baseline-pull-3 baseline-deshift-22
