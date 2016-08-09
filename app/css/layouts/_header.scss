@@ -211,6 +211,13 @@ header {
 						content: '';
 						background: url(../img/header/line.png) 0 0/cover;
 					}
+					&:last-child:after{
+						display: block;
+						width: 100%;
+						height: vwsm(5);
+						content: '';
+						background: url(../img/header/line.png) 0 0/cover;
+					}
 				}
 			}
 		}
