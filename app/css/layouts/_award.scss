@@ -37,7 +37,7 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		@media screen and (max-width: 768px) {
-			margin: 0 0 0 vwsm(10);
+			margin: 0 vwsm(10) 0 vwsm(10);
 			width: vwsm(620 - 20)!important;
 			height: auto !important;
 			overflow-y: auto;
@@ -74,16 +74,18 @@
 			left: -60px;
 			top: -45px;
 			@media screen and (max-width: 768px) {
-				left: vwsm(-25);
-				top: vwsm(-95);
+				left: vwsm(-10);
+				top: vwsm(-77);
+				width: vwsm(130);
 			}
 		}
 		.award.award-2{
 			left: -61px;
 			top: -16px;
 			@media screen and (max-width: 768px) {
-				left: vwsm(-15);
-				top: vwsm(-60);
+				left: vwsm(-5);
+				top: vwsm(-50);
+				width: vwsm(95);
 			}
 		}
 

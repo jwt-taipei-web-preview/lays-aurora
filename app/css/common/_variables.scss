@@ -52,15 +52,6 @@ $base-font-size-sm: 10px;
 	font-size: $base-font-size;
 }
 
-@for $i from 11 to 44 {
-	.fontsize-#{$i} {
-		font-size: #{$i}px;
-	}
-	.fontsize-percent-#{$i} {
-		font-size: percentage($i/$base-font-size-num);
-	}
-}
-
 $browser-xs-viewport: 320; // Default
 $browser-sm-viewport: 640; // Default
 $browser-md-viewport: 1170; // Default
@@ -93,8 +84,14 @@ $browser-lg-viewport: 1920; // Default
 $font-default-color: #000b26;
 $font-default-hover-color: #333;
 
-@media screen and (max-width: 768px) {
-	@for $i from 11 to 44 {
+@for $i from 11 to 50 {
+	.fontsize-#{$i} {
+		font-size: #{$i}px;
+	}
+	.fontsize-percent-#{$i} {
+		font-size: percentage($i/$base-font-size-num);
+	}
+	@media screen and (max-width: 768px) {
 		.fontsize-sm-#{$i} {
 			font-size: vwsm($i);
 		}
