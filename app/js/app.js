@@ -102,10 +102,6 @@ $(function(){
 
 	//捲動到錨點處
 	function gotoAnchor(anchor){
-		if(app.ismobile() && !anchor){
-			return;
-		}
-
 		anchor = anchor || location.hash.replace('#','');
 
 		if(!anchor) return;
@@ -124,11 +120,6 @@ $(function(){
 	//觸發第一次調整頁面尺寸
 	$(window).trigger('resize');
 
-
-	//選單burger
-	// $('.burger').on('click', function(){
-	// 	$('body').toggleClass('overlay');
-	// });
 
 	//分享按鈕
 
@@ -165,7 +156,7 @@ $(function(){
 	// 捲動至錨點時網址轉換
 	$(window).on('scroll', function(){
 
-		if(app.skip){
+		if(app.skip || app.ismobile()){
 			return;
 		}
 		var currentTop = $(window).scrollTop();
