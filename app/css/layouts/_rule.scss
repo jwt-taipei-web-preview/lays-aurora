@@ -50,6 +50,10 @@
 					display: none;
 				}
 			}
+			-webkit-overflow-scrolling: auto;
+			@media screen and (max-width: 768px) {
+				-webkit-overflow-scrolling: touch;
+			}
 
 		}
 		p{

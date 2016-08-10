@@ -36,6 +36,10 @@
 		height: 350px;
 		overflow-y: auto;
 		overflow-x: hidden;
+		-webkit-overflow-scrolling: auto;
+		@media screen and (max-width: 768px) {
+			-webkit-overflow-scrolling: touch;
+		}
 		@media screen and (max-width: 768px) {
 			margin: 0 vwsm(10) 0 vwsm(10);
 			width: vwsm(620 - 20)!important;
