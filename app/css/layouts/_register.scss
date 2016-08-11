@@ -57,8 +57,7 @@
 				}
 
 				input{
-					visibility: hidden;
-					width: 0;
+					display: none;
 
 					&:checked ~ span .checkbox.checked{
 						opacity: 1;
@@ -69,6 +68,7 @@
 					padding: 0.5em 0 0 2em;
 					position: relative;
 					display: inline-block;
+					line-height: 1.5em;
 				}
 				.checkbox{
 					position: absolute;

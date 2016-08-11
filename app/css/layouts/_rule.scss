@@ -56,7 +56,7 @@
 			}
 
 		}
-		p{
+		div.row{
 			position: relative;
 			margin:0;
 			padding-left: 5px;
@@ -107,6 +107,16 @@
 				@media screen and (max-width: 768px) {
 					font-size: vwsm(28);
 				}
+			}
+
+			a{
+				color: #fff;
+			}
+			.jspHorizontalBar{
+				display: none;
+			}
+			ul li{
+				list-style: '－';
 			}
 		}
 
