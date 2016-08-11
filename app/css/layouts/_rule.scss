@@ -60,6 +60,8 @@
 			position: relative;
 			margin:0;
 			padding-left: 5px;
+			text-align: justify;
+
 			@media screen and (max-width: 768px) {
 				margin-bottom: vwsm(20);
 				letter-spacing: 0;
@@ -84,7 +86,7 @@
 			}
 			label{
 				font-weight: bold;
-				white-space: nowrap;
+				padding-right: 0.5em;
 				@media screen and (max-width: 768px) {
 					margin:0;
 					color: #fff;
@@ -112,11 +114,12 @@
 			a{
 				color: #fff;
 			}
-			.jspHorizontalBar{
-				display: none;
-			}
-			ul li{
-				list-style: '－';
+			ul{ 
+				padding-left: 1em;
+				li{
+					list-style: outside;
+					text-align: justify;
+				}
 			}
 		}
 
@@ -128,6 +131,9 @@
 			h3{
 				margin: 0 auto;
 			}
+		}
+		.jspHorizontalBar{
+			display: none;
 		}
 	}
 }
