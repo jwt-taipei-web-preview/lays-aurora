@@ -64,6 +64,8 @@
 			margin:0;
 			padding-left: 5px;
 			text-align: justify;
+			letter-spacing: 0;
+			word-spacing: 0;
 			&.alfa{
 				&:before{
 					display: none;
@@ -120,7 +122,8 @@
 			}
 
 			a{
-				color: #fff;
+				color: inherit;
+				text-decoration: underline;
 			}
 			ul{ 
 				padding-left: 1em;

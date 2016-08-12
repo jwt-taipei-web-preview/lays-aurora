@@ -106,12 +106,27 @@ $(function(){
 
 		if(!anchor) return;
 
-		TweenMax.to('html, body', 0.5, {
-			scrollTop: $(pageSelector + anchor).offset().top,
-			onComplete: function(){
-				app.skip = false;
-			}
-		});
+		if($(pageSelector + anchor).length){
+			TweenMax.to('html, body', 0.5, {
+				scrollTop: $(pageSelector + anchor).offset().top,
+				onComplete: function(){
+					app.skip = false;
+				}
+			});
+		}else if(anchor === 'term'){
+			TweenMax.to('html, body', 0.5, {
+				scrollTop: $(pageSelector + 'rule').offset().top,
+				onComplete: function(){
+					app.skip = false;
+				}
+			});
+			TweenMax.to($(pageSelector + 'rule .jspPane'), 0.5, {
+				top: $(pageSelector + 'rule .jspPane').offset().top - $('#term').offset().top,
+				onComplete: function(){
+					app.skip = false;
+				}
+			});
+		}
 	}
 
 	app.gotoAnchor = gotoAnchor;

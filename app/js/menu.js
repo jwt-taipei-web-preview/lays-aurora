@@ -37,6 +37,11 @@ app.modules.menu = function(){
 
 		var href = $(this).attr('href').replace(/[#]/ig, '');
 
+		if(href === 'term'){
+			app.gotoAnchor(href);
+			return false;
+		}
+
 		$(this).addClass('active').siblings().removeClass('active');
 
 		app.gotoAnchor(href);
