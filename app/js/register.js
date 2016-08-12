@@ -95,49 +95,19 @@ app.pages.register = function($this){
 				email: $('input[name=\'email\']').val(),
 				utm_medium: utm_medium
 			},
-            success: function(){
-            	$('.form', $this).removeClass('in');
-            	$('.complete', $this).removeClass('hide');
-            	$('#reset').trigger('click');
+			success: function(r){
+				if(r.Success * 1 === 1){
+					$('.form', $this).removeClass('in');
+					$('.complete', $this).removeClass('hide');
+					$('#reset').trigger('click');
+				}else{
+					// console.log(r);
+					alert(r.Msg)
+				}
             }
         });
 		return false;
 	});
-
-
-
-	//表單驗證
-
-	// function valid(form){
-	// 	var result = true;
-	// 	// console.log($('input, select, textarea', form))
-	// 	try{
-	// 		$('input, select, textarea', form).each(function(index, input){
-	// 			var field = {};
-	// 			input = $(input);
-	// 			field.name = input.attr('data-name') || input.attr('name');
-	// 			field.required = input.hasAttr('required');
-	// 			field.patern = input.attr('pattern');
-	// 			field.value = input.val();
-	// 			if(field.required && !field.value){
-	// 				// alert('請填寫' + field.name);
-	// 				result = false;
-	// 			}
-	// 			if(!(new RegExp(field.pattern)).test(field.value)){
-	// 				// alert(field.name +' 格式錯誤');
-	// 				result = false;
-	// 			}
-	//       		return result;
-				
-	// 		});
-	// 	}catch(e){
-	// 		console.error(e);
-	// 	}
-
-	// 	return result;
-	// }
-
-	// app.valid = valid;
 };
 
 
