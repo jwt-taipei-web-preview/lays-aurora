@@ -141,7 +141,7 @@
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 invoice-container">
                 <label for="invoice" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">發票號碼</label>
                 <aside class="baseline-deshift-15 baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
-                  <input name="sInvoice" id="invoice" class="form-control  fontsize-sm-25" type="text">
+                  <input name="invoice[]" id="invoice" class="form-control  fontsize-sm-25" type="text" required>
                 </aside>
                 <aside class="col-lg-1 col-md-1 col-sm-1 col-xs-1 add-container lh-25">
                   <a class="add vertical-top" href="javascript:"><img src="img/register/add.png"></a>
@@ -150,25 +150,25 @@
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label for="name" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">姓名</label>
                 <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
-                  <input name="sName" id="name" class="form-control  fontsize-sm-25" type="text">
+                  <input name="username" id="name" class="form-control  fontsize-sm-25" type="text" required>
                 </aside>
               </aside>
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label for="phone" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">手機</label>
                 <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
-                  <input name="sMobile" id="phone" class="form-control  fontsize-sm-25" type="text">
+                  <input name="phone" id="phone" class="form-control  fontsize-sm-25" type="text" required>
                 </aside>
               </aside>
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label for="email" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">e-mail</label>
                 <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
-                  <input name="sEmail" id="email" class="form-control  fontsize-sm-25" type="text">
+                  <input name="email" id="email" class="form-control  fontsize-sm-25" type="email" required>
                 </aside>
               </aside>
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label for="captcha" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">驗證碼</label>
                 <aside class="baseline-deshift-15 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                  <input name="sValidateCode" id="captcha" class="form-control  fontsize-sm-25" type="text">
+                  <input name="sValidateCode" id="captcha" class="form-control  fontsize-sm-25" type="text" required>
                 </aside>
                 <aside class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                   <img src="img/register/captcha.png">
@@ -185,16 +185,16 @@
               </aside>
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <aside class="button-group button-group w-430 row block-centralize">
-                  <button id="reset" data-ga="rekey" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <button id="reset" data-ga="rekey" data-ga-mobile="m_rekey" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img src="img/register/reset.png">
                   </button>
-                  <button id="submit" data-ga="send" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <button id="submit" data-ga="send" data-ga-mobile="m_send" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img src="img/register/submit.png">
                   </button>
                 </aside>
               </aside>
             </section>
-            <input type="hidden" name="sAD">
+            <input type="hidden" name="utm_medium">
             <aside class="complete text-center hide">
               <h5 class="fontsize-43 fontsize-sm-62">登錄完成</h5>
               <hr class="visible-sm visible-xs">

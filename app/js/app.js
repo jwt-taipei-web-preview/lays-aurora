@@ -5,7 +5,7 @@
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 
-/*global  $, TweenMax, fontSpy */
+/*global  $, TweenMax, fontSpy, ga */
 var app = {};
 
 var scrollTop = 0;
@@ -255,37 +255,6 @@ $(function(){
 		if(!app.skip){
 			gotoAnchor(name);
 		}
-	}
-
-	//表單驗證
-
-	function valid(form){
-		var result = true;
-		// console.log($('input, select, textarea', form))
-		try{
-			$('input, select, textarea', form).each(function(index, input){
-				var field = {};
-				input = $(input);
-				field.name = input.attr('data-name') || input.attr('name');
-				field.required = input.hasAttr('required');
-				field.patern = input.attr('pattern');
-				field.value = input.val();
-				if(field.required && !field.value){
-					// alert('請填寫' + field.name);
-					result = false;
-				}
-				if(!(new RegExp(field.pattern)).test(field.value)){
-					// alert(field.name +' 格式錯誤');
-					result = false;
-				}
-	      		return result;
-				
-			});
-		}catch(e){
-			console.error(e);
-		}
-
-		return result;
 	}
 
 
