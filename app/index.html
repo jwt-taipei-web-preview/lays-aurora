@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
     <meta property="og:title" content="北歐秘境 極光雙人遊 | Lay's 樂事"/>
     <meta property="og:description" content=""/>
-    <meta property="og:image" content="/img/share.jpg"/>
+    <meta property="og:image" content="http://yummy.lays.com.tw.teectest.co.uk/img/share.jpg"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     <title>北歐秘境 極光雙人遊 | Lay's 樂事</title>
@@ -167,11 +167,9 @@
               </aside>
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label for="captcha" class="col-lg-4 col-md-4 col-sm-3 col-xs-3 text-right fontsize-21 fontsize-sm-28">驗證碼</label>
-                <aside class="baseline-deshift-15 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                  <input name="sValidateCode" id="captcha" class="form-control  fontsize-sm-25" type="text" required>
-                </aside>
-                <aside class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                  <img src="img/register/captcha.png">
+                <aside class="baseline-deshift-15 col-lg-7 col-md-7 col-sm-8 col-xs-8">
+                  <!-- <img src="img/register/captcha.png"> -->
+                  <div id="captcha" class="g-recaptcha" data-sitekey="6LeKcScTAAAAAFxeSSmIWv3eHgg11w-ORuJmpsf3"></div>
                 </aside>
               </aside>
               <aside class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center term baseline-deshift-20 nowrap text-left-sm text-left-xs">
@@ -530,7 +528,7 @@
         ga('create', 'UA-55162423-3', 'auto'); ga('send', 'pageview');
 
     </script>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
