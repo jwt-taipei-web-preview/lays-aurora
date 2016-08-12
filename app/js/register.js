@@ -102,7 +102,7 @@ app.pages.register = function($this){
 					$('#reset').trigger('click');
 				}else{
 					// console.log(r);
-					alert(r.Msg)
+					alert(r.Msg);
 				}
             }
         });
