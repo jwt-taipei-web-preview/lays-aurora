@@ -8,23 +8,27 @@
 app.modules.ga = function(){
 	// console.log('ga initialized');
 
-	// 上方選單
-	$('a').filter(function(){
-		return $(this).hasAttr('data-ga');
-	}).on('click', function(){
-		if($('html.mobile').length){
+
+	if($('html').hasClass('mobile')){
+
+		$('a').filter(function(){
+			return $(this).hasAttr('data-ga-mobile');
+		}).on('click', function(){
 			ga('send', 'event', {
 				eventCategory: 'event',
 				eventAction: 'click',
-				eventLabel: $(this).attr('data-ga').replace('_p','_m')
+				eventLabel: $(this).attr('data-ga-mobile')
 			});
-		}else{
+		});
+	}else{
+		$('a').filter(function(){
+			return $(this).hasAttr('data-ga');
+		}).on('click', function(){
 			ga('send', 'event', {
 				eventCategory: 'event',
 				eventAction: 'click',
 				eventLabel: $(this).attr('data-ga')
 			});
-		}
-
-	});
+		});
+	}
 };
