@@ -59,24 +59,29 @@ app.pages.register = function($this){
     		return false;
     	}
     	msg='';
-    	if($('input[name=\'username\']').val()=='')
+    	if($('#g-recaptcha-response').val() == ''){    		
+			msg = '請先完成圖片驗證';
+    	}
+		else if($('input[name=\'username\']').val()==''){
 			msg = '請填寫姓名';
-    	else if($('input[name=\'username\']').val().length>5)
+		}
+		else if($('input[name=\'username\']').val().length>5){
 			msg = '姓名字數最多5字';
-		else if($('input[name=\'phone\']').val()=='' || !$('input[name=\'phone\']').val().match(mobileReg))
-            msg = '請填寫並確認手機格式';
-		else if($('input[name=\'email\']').val()=='' || !$('input[name=\'email\']').val().match(emailReg))
-            msg = '請填寫並確認Email格式';
-		//else if($('input[name=\'check\']').val()!=ckword)
-		// else if($('input[name=\'check\']').val()!=ans_now)
-  //           msg = '驗證碼填寫錯誤';
+		}
+		else if($('input[name=\'phone\']').val()=='' || !$('input[name=\'phone\']').val().match(mobileReg)){
+			msg = '請填寫並確認手機格式';
+		}
+		else if($('input[name=\'email\']').val()=='' || !$('input[name=\'email\']').val().match(emailReg)){
+			msg = '請填寫並確認Email格式';
+		}
 		else if(!$('input[name=\'term\']').is(':checked')){
 			msg = '請勾選同意活動辦法條款';
 		}
-    	if(msg!=''){
-    		alert(msg);
-    		return false;
-    	}
+		if(msg!=''){
+			alert(msg);
+			return false;
+		}
+
     	// ga('send','event','button','click','send');
     	// console.log('send');
     	var invoice = $('input[name=\'invoice[]\']').map(function(){return $(this).val(); }).get();
