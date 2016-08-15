@@ -8,6 +8,10 @@
 app.pages.register = function($this){
 	// console.log('index initialized');
 	$('.add', $this).on('mousedown', function(){
+		if($('.invoice-container', $this).length == 5){
+			alert('一次最多5筆');
+			return false;
+		}
 		var invoice = $('.invoice-container', $this).eq(0).clone().addClass('fade');
 		$('.add-container, >label', invoice).html('');
 		$('input', invoice)
@@ -22,6 +26,9 @@ app.pages.register = function($this){
 			$('.form', $this).jScrollPane();
 		}
 	}).on('mouseup', function(){
+		if($('.invoice-container', $this).length == 5){
+			return false;
+		}
 		$('.invoice-container', $this).last().addClass('in');
 	});
 
