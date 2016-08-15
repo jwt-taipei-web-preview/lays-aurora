@@ -176,6 +176,11 @@ app.pages.register = function($this){
 		}
 
 	});
+	$('input', $this).on('focus', function(){
+		$($this).addClass('focus');
+	}).on('blur', function(){
+		$($this).removeClass('focus');
+	});
 };
 
 

@@ -1,4 +1,9 @@
 .page#register {	
+	@media screen and (max-width: 768px) {
+		&.focus{
+			background: url(../img/index/house-m.png) center bottom/cover no-repeat;
+		}
+	}
 	.center{
 		width:650px;
 		margin: 0 auto;
