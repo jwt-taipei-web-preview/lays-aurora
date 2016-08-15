@@ -2,6 +2,9 @@
 	@media screen and (max-width: 768px) {
 		&.focus{
 			background: url(../img/index/house-m.png) center bottom/cover no-repeat;
+			input{
+				// font-size: 16px;
+			}
 		}
 	}
 	.center{
@@ -47,6 +50,9 @@
 				border-radius: 18px;
 				box-shadow: inset rgba(0, 65, 84,0.75) 1px 1px 4px;
 				border: 0;
+				@media screen and (max-width: 768px) {
+					line-height: 1em;
+				}
 			}
 
 			.form-group{
