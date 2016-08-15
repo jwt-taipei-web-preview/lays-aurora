@@ -31,16 +31,16 @@ var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
 var share = {
 	facebook: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
+		href = encodeURIComponent(href || location.href.replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
 		title = encodeURIComponent(title || document.title);
 		window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
 	},
 	googleplus: function(href){
-		href = encodeURIComponent(href || location.href + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
+		href = encodeURIComponent(href || location.href.replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
 		window.open('https://plus.google.com/share?url=' + href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 	},
 	email: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
+		href = encodeURIComponent(href || location.href.replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
 		title = encodeURIComponent(title || document.title);
 		var body = encodeURIComponent(''+href+' #' +title+'');
 		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');

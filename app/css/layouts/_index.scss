@@ -233,6 +233,12 @@
 		top: auto;
 		bottom:0;
 		background: url(../img/index/house-m.png) center bottom/cover no-repeat;
+		img{
+			width: 100%;
+			min-height: 100%;
+			position: fixed;
+			bottom: 0;
+		}
 	}
 }
 .light{

@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations, no-alert*/
-/*global $, app */
+/*global $, app, share */
 app.pages.register = function($this){
 	// console.log('index initialized');
 	$('.add', $this).on('mousedown', function(){
@@ -34,6 +34,7 @@ app.pages.register = function($this){
 
 	$('#reset').on('click', function(){
 		$('input').val('');
+		return false;
 	});
 
 	var emailReg 	= /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -107,6 +108,73 @@ app.pages.register = function($this){
             }
         });
 		return false;
+	});
+
+
+	$('.share').unbind('click').on('click', function(){share.facebook(); return false; });
+
+	$(document).on('input keyup', 'textarea[maxlength]', function(e) {
+		// maxlength attribute does not in IE prior to IE10
+		// http://stackoverflow.com/q/4717168/740639
+		var $this = $(this);
+		var maxlength = $this.attr('maxlength');
+
+		if (+maxlength) {
+			var text = $this.val();
+
+			if (text.length > maxlength) {
+				// truncate excess text (in the case of a paste)
+				$this.val(text.substring(0,maxlength));
+				e.preventDefault();
+			}
+
+		}
+
+		if($(this).next().hasClass('hint') && text.length > 0){
+			$(this).next().addClass('hide');
+		}else{
+			$(this).next().removeClass('hide');
+		}
+
+	});
+	$(document).on('compositionstart', 'input[data-maxlength]', function(){
+		$(this).attr('data-compositing','1');
+	});
+	$(document).on('compositionend', 'input[data-maxlength]', function(){
+		$(this).attr('data-compositing','0');
+		$(this).trigger('input');
+	});
+	$(document).on('input keyup', 'input[data-maxlength]', function(e) {
+		// compositionstart : IME start composite words
+		// compositionstart : IME ends composition
+		// for IEs
+		// if($('html').hasClass('ie')){
+			if($(this).attr('data-compositing') * 1){
+				e.preventDefault();	
+				return false;
+			}
+		// }
+		var $this = $(this);
+		var maxlength = $this.attr('data-maxlength');
+
+		if (+maxlength) {
+			var text = $this.val();
+
+			if (text.length > maxlength) {
+				// truncate excess text (in the case of a paste)
+				$this.val(text.substring(0,maxlength));
+				e.preventDefault();	
+			}
+
+		}
+
+
+		if($(this).next().hasClass('hint') && text.length > 0){
+			$(this).next().addClass('hide');
+		}else{
+			$(this).next().removeClass('hide');
+		}
+
 	});
 };
 
