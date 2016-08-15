@@ -1,7 +1,7 @@
 .page#register {	
 	@media screen and (max-width: 768px) {
 		&.focus{
-			background: url(../img/index/house-m.png) center bottom/cover no-repeat;
+			background: url(../img/index/house-m.png) center bottom/cover no-repeat fixed;
 			input{
 				// font-size: 16px;
 			}
