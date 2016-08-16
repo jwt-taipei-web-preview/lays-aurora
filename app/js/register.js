@@ -183,10 +183,21 @@ app.pages.register = function($this){
 		}
 
 	});
+	var focused = false;
 	$('input', $this).on('focus', function(){
-		$($this).addClass('focus');
+		$('.house').addClass('focus');
+		$('.house').css('margin-top', $(window).scrollTop() + $(window).height() - $('.house').outerHeight());
+		focused = true;
+
 	}).on('blur', function(){
-		$($this).removeClass('focus');
+		$('.house').removeClass('focus');
+		$('.house').removeAttr('style');
+		focused = false;
+	});
+	$(window).on('scroll', function(){
+		if(focused){
+			$('.house').css('margin-top', $(window).scrollTop() + $(window).height() - $('.house').outerHeight());
+		}
 	});
 };
 

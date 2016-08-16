@@ -67,8 +67,6 @@ function lighten( page ){
 			}	
 		}
 
-		$('.house').css('margin-top', $(window).scrollTop());
-		$('.house').css('top', $(window).scrollTop());
 	});
 
 	function l(fig, duration, delay){
