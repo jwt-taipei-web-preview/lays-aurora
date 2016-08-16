@@ -117,36 +117,36 @@ header {
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+}
 
-		.burger, .close{
-			z-index: 50;
-			position: absolute;
-			top:0;
-			right: 0;
-			opacity: inherit;
-			&.fade{
-				opacity: 0;
-				&.in{
-					opacity: 1;
-				}
-			}
-			&.hide{
-				display: none !important;
-			}
+@media screen and (max-width: 768px) {
 
-			img{
-				width: vwsm(114);
+	.burger, .close{
+		z-index: 50;
+		position: absolute;
+		top:0;
+		right: 0;
+		opacity: inherit;
+		&.fade{
+			opacity: 0;
+			&.in{
+				opacity: 1;
 			}
 		}
-		.close{
-			img{
-				width: vwsm(109);
-			}
+		&.hide{
+			display: none !important;
+		}
+
+		img{
+			width: vwsm(114);
+		}
+	}
+	.close{
+		img{
+			width: vwsm(109);
 		}
 	}
 }
-
 @media screen and (max-width: 768px) {
 
 	body.menu{

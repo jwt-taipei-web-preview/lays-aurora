@@ -66,6 +66,9 @@ function lighten( page ){
 				tlStack.pop().resume();
 			}	
 		}
+
+		$('.house').css('margin-top', $(window).scrollTop());
+		$('.house').css('top', $(window).scrollTop());
 	});
 
 	function l(fig, duration, delay){
