@@ -201,9 +201,17 @@
 
 	}
 }
+.kvideo{
+	min-width: 100%;
+	min-height: 100%;
+	position: fixed;
+	bottom:0;
+	left:0;
+}
 
 .light-container{
 	background: url(../img/index/bg.png) center bottom/cover no-repeat fixed;
+	// background: #02617D;
 	width: 100%;
 	height: 100vh;
 	position: fixed;
@@ -259,6 +267,10 @@
 		transition: opacity 0.7s ease-out 0s;
 		opacity: 1;
 	}
+
+}
+#ab{
+	transform: scaleY(20) scaleX(30) rotateZ(-180deg) translateY(-44%) skewX(-45deg);
 }
 @media screen and (max-width: 1366px) and (min-width: 769px) {		
 	.light,.light-container,.house{
