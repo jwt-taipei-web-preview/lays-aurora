@@ -217,8 +217,8 @@ $(function(){
 		$('html').removeClass('loading');
 	    setTimeout(function(){
 			video[0].pause();
-			video.addClass('fade')
-	    }, 3000)
+			video.addClass('fade');
+	    }, 3000);
 	});
 
 	app.scrollTop = scrollTop;
