@@ -208,7 +208,18 @@ $(function(){
 
 	gotoAnchor();
 
-	$('html').removeClass('loading');
+
+	var video = $('.kvideo');
+	video.attr('onloadstart', function() {
+	    
+	});
+	video.attr('onload', function() {
+		$('html').removeClass('loading');
+	    setTimeout(function(){
+			video[0].pause();
+			video.addClass('fade')
+	    }, 3000)
+	});
 
 	app.scrollTop = scrollTop;
 

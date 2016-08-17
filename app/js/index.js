@@ -17,10 +17,6 @@ app.pages.index = function($this){
 	// });
 	// $this.addClass('in');
 
-	var video = $('.kvideo');
-	video.attr('onloadstart', function() {
-	    
-	});
 
 };
 
@@ -53,9 +49,9 @@ function lighten( page ){
 			tlStack.push(l($('.container .light2'), 2, 1.5) );
 			tlStack.push(bg($('.container .light-container'), 10, 1) );
 			tlStack.push(glitter($('.glitter', page), 2, 2) );
-			tlStack.push(spot($('.group-2 figure:eq(0)', page), 3, 2) );
-			tlStack.push(spot($('.group-3 figure:eq(0)', page), 3.2, 3) );
-			tlStack.push(spot($('.group-4 figure:eq(0)', page), 3.6, 4) );
+			// tlStack.push(spot($('.group-2 figure:eq(0)', page), 3, 2) );
+			// tlStack.push(spot($('.group-3 figure:eq(0)', page), 3.2, 3) );
+			// tlStack.push(spot($('.group-4 figure:eq(0)', page), 3.6, 4) );
 		}
 	}).trigger('resize');
 
