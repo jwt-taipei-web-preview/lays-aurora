@@ -50,6 +50,12 @@ app.modules.menu = function(){
 
 		$(app.pageSelector + href).addClass('in');
 
+		if(href == 'register'){
+
+			$('.form', $('#register')).addClass('in');
+			$('.complete', $('#register')).addClass('hide');
+		}
+
 		e.stopPropagation();
 
 		e.preventDefault();

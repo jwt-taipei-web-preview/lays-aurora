@@ -7,6 +7,7 @@
 /*global $, app, share */
 app.pages.register = function($this){
 	// console.log('index initialized');
+	var captcha = app.guid().substring(0,6);
 	$('.add', $this).on('mousedown', function(){
 		if($('.invoice-container', $this).length == 5){
 			alert('一次最多5筆');
@@ -25,6 +26,7 @@ app.pages.register = function($this){
 		}else{
 			$('.form', $this).jScrollPane();
 		}
+		$('.invoice-container', $this).not($('.invoice-container', $this).last()).addClass('in');
 	}).on('mouseup', function(){
 		if($('.invoice-container', $this).length == 5){
 			return false;
@@ -67,8 +69,11 @@ app.pages.register = function($this){
     		return false;
     	}
     	msg='';
-    	if($('#g-recaptcha-response').val() == ''){    		
-			msg = '請先完成圖片驗證';
+   //  	if($('#g-recaptcha-response').val() == ''){    		
+			// msg = '請先完成圖片驗證';
+   //  	}
+    	if($('#captcha').val() != captcha){    		
+			msg = '驗證碼錯誤';
     	}
 		else if($('input[name=\'username\']').val()==''){
 			msg = '請填寫姓名';
@@ -199,6 +204,13 @@ app.pages.register = function($this){
 			$('.house').css('margin-top', $(window).scrollTop() + $(window).height() - $('.house').outerHeight());
 		}
 	});
+	$('a.refresh', $this).on('click', function(){
+		refreshCaptcha();
+	}).trigger('click');
+	function refreshCaptcha(){
+		var captcha = app.guid().substring(0,6);
+		$('.captcha').html($('<img>').attr('src', '//yummy.lays.com.tw.teectest.co.uk/showpic.php?ans_now=' + captcha));
+	}
 };
 
 

@@ -98,6 +98,9 @@ html{
 		}
 		// }
 	}
+	&.desktop.windows7 body{
+		font-family: 'segoe ui', verdana, arial, 'microsoft jhenghei';
+	}
 	&:after{
 		z-index: 200;
 		background: #000;

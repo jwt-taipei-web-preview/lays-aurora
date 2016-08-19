@@ -187,8 +187,10 @@
 				}
 			}
 		}
-		.button-group{
-			margin: 0;
+		@media screen and (max-width: 768px) {
+			.button-group{
+				margin: 0;
+			}
 		}
 	}
 }

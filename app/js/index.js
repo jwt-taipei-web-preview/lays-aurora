@@ -17,7 +17,16 @@ app.pages.index = function($this){
 	// });
 	// $this.addClass('in');
 
+	$('.kvideo')[0].ontimeupdate = function(e){
+		console.log(e.target.currentTime);
+		if($('.kvideo').attr('data-play') == '1' && Math.round(e.target.currentTime - 0.3) >= 9 ) {		
+			e.target.pause();
+		}
 
+		if(Math.round(e.target.currentTime - 0.3) < 9){
+			$('.kvideo').attr('data-play', 1);
+		}
+	};
 };
 
 function lighten( page ){
@@ -45,10 +54,9 @@ function lighten( page ){
 			});
 
 		}else{
-			tlStack.push(l($('.container .light1'), 1, 0) );
-			tlStack.push(l($('.container .light2'), 2, 1.5) );
-			tlStack.push(bg($('.container .light-container'), 10, 1) );
-			tlStack.push(glitter($('.glitter', page), 2, 2) );
+
+
+			// tlStack.push(glitter($('.glitter', page), 2, 2) );
 			// tlStack.push(spot($('.group-2 figure:eq(0)', page), 3, 2) );
 			// tlStack.push(spot($('.group-3 figure:eq(0)', page), 3.2, 3) );
 			// tlStack.push(spot($('.group-4 figure:eq(0)', page), 3.6, 4) );
