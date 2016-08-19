@@ -30,9 +30,6 @@ app.pages.index = function($this){
 			$('.kvideo video').attr('data-play', 1);
 		}
 	};
-	$('.kvideo video')[0].oncanplaythrough = function() {
-	    $('.kvideo video').attr('data-loaded', true);
-	};
 
 	$($this).on('mousemove', function(e){
 		if($(window).width() > 1024){

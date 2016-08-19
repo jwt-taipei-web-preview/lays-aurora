@@ -226,6 +226,7 @@ $(function(){
 
 				});
 				video.attr('oncanplaythrough', function() {
+	    			$('.kvideo video').attr('data-loaded', true);
 					setTimeout(function(){
 						pushState('index');
 						$('html').removeClass('loading');
@@ -234,6 +235,10 @@ $(function(){
 						// tlStack.push(bg($('.container .light-container'), 10, 1) );
 					}, 50);
 				});
+				
+				// $('.kvideo video')[0].oncanplaythrough = function() {
+				//     $('.kvideo video').attr('data-loaded', true);
+				// };
 				clearInterval(checkFont);
 			},
 			failure: function() {
