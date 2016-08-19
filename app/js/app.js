@@ -225,7 +225,7 @@ $(function(){
 				video.attr('onloadstart', function() {
 
 				});
-				video.attr('onload', function() {
+				video.attr('oncanplaythrough', function() {
 					setTimeout(function(){
 						pushState('index');
 						$('html').removeClass('loading');
@@ -261,6 +261,7 @@ $(function(){
 			ga('send', 'pageview', 'pv_' + activeSection);
 		}
 		if(name === 'index'){
+			$('.poster').removeClass('in');
 			var tl = new TimelineMax({
 				pause: true,
 				onComplete: function(){
@@ -269,12 +270,14 @@ $(function(){
 				}
 			});
 			tl.add(function(){
-				if( Math.round($('.kvideo')[0].currentTime - app.videoTimeEnd) >= 9){
-					$('.kvideo').attr('data-play', 0);
+				if( Math.round($('.kvideo video')[0].currentTime - app.videoTimeEnd) >= 9){
+					$('.kvideo video').attr('data-play', 0);
 				}else{
-					$('.kvideo').attr('data-play', 1);
+					$('.kvideo video').attr('data-play', 1);
 				}
-				$('.kvideo')[0].play();
+				if($('.kvideo video').attr('data-loaded')){
+					$('.kvideo video')[0].play();
+				}
 			});
 			tl.addPause(2);
 			tl.add(function(){

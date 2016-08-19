@@ -113,6 +113,7 @@ app.pages.register = function($this){
 					$('.form', $this).removeClass('in');
 					$('.complete', $this).removeClass('hide');
 					$('#reset').trigger('click');
+					refreshCaptcha();
 				}else{
 					// console.log(r);
 					alert(r.Msg);
