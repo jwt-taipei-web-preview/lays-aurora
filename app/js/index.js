@@ -19,11 +19,11 @@ app.pages.index = function($this){
 
 	$('.kvideo')[0].ontimeupdate = function(e){
 		console.log(e.target.currentTime);
-		if($('.kvideo').attr('data-play') == '1' && Math.round(e.target.currentTime - 0.3) >= 9 ) {		
+		if($('.kvideo').attr('data-play') == '1' && Math.round(e.target.currentTime - app.videoTimeEnd) >= 9 ) {		
 			e.target.pause();
 		}
 
-		if(Math.round(e.target.currentTime - 0.3) < 9){
+		if(Math.round(e.target.currentTime - app.videoTimeEnd) < 9){
 			$('.kvideo').attr('data-play', 1);
 		}
 	};

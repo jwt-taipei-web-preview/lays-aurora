@@ -22,6 +22,8 @@ app.scrollTop = scrollTop;
 app.activeSection = activeSection;
 app.pageSelector = pageSelector;
 app.skip = false;
+
+app.videoTimeEnd = 0.8;
 // console.log(new Date);
 
 // var dayOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -267,7 +269,7 @@ $(function(){
 				}
 			});
 			tl.add(function(){
-				if( Math.round($('.kvideo')[0].currentTime - 0.3) >= 9){
+				if( Math.round($('.kvideo')[0].currentTime - app.videoTimeEnd) >= 9){
 					$('.kvideo').attr('data-play', 0);
 				}else{
 					$('.kvideo').attr('data-play', 1);
