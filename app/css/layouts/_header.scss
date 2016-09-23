@@ -25,6 +25,8 @@ header {
 			font-weight: 600;
 			transform-origin: 0 0 1px;
 
+
+
 			img.hover{
 				position: relative;
 				display: block;
@@ -219,6 +221,20 @@ header {
 						background: url(../img/header/line.png) 0 0/cover;
 					}
 				}
+			}
+		}
+	}
+}
+html.disabled{
+	header{
+		nav{
+			a{
+				&:nth-child(1),&:nth-child(2),&:nth-child(3){
+					//停用
+					pointer-events: none;
+					cursor: default;
+				}
+
 			}
 		}
 	}

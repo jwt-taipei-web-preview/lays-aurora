@@ -202,23 +202,31 @@
 	}
 }
 .kvideo{
-	min-width: 100%;
-	min-height: 100%;
+	min-width: 100vw;
+	min-height: 100vh;
 	position: fixed;
 	bottom:0;
 	left:0;
 	z-index: 0;
-	background: url(../img/index/poster.png) bottom center/cover;
+	background: url(../img/index/poster.jpg) bottom center/cover;
+	video{
+		position: absolute;
+		left:0;
+		img{
+			display: none;
+			// filter: invert(1);
+		}
+	}
 
 	&:after{
-		content: '';
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		opacity: 0.03;
-		background: url(../img/index/loop.png);
+		// content: '';
+		// width: 100%;
+		// height: 100%;
+		// position: absolute;
+		// left: 0;
+		// top: 0;
+		// opacity: 0.03;
+		// background: url(../img/index/loop.png);
 	}
 }
 .poster{
@@ -235,25 +243,6 @@
 	}
 }
 
-.light-container{
-	background: url(../img/index/bg.png) center bottom/cover no-repeat fixed;
-	// background: #02617D;
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	transform-origin: 0 100% 1px;
-	&.active{
-		transform: scale(1.06) translate(-0.1%, 1%);
-		transition: transform 5s ease-out 0s;
-
-		&.in{
-			transform: scale(1) translate(0, 0%);
-			transition: transform 5.5s linear;
-		}
-	}
-}
 .house{
 	width: 100%;
 	height: 100vh;
@@ -263,11 +252,11 @@
     transform: skewX(0deg);
     transform-origin: center top 0;
     width: 110vw;
-	@media screen and (min-width: 769px) {
+	@media screen and (min-width: 1025px) {
 		margin-top: auto!important;
 	}
 	background: url(../img/index/house.png) center bottom/cover no-repeat;
-	@media screen and (max-width: 768px) {	
+	@media screen and (max-width: 1024px) {	
 		&.focus{
 			position: absolute;
 			height: auto;
@@ -279,47 +268,5 @@
 		position: fixed;
 		width: 100%;
 		min-height: 100vh;
-	}
-}
-.light{
-	background: center bottom/cover no-repeat fixed;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	transition: opacity 0.5s ease-out 0s;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	&.light1{
-		background-image:url(../img/index/light-1.png);
-	}
-	&.light2{
-		background-image:url(../img/index/light-2.png);
-	}
-	&.active{
-		transition: opacity 0.7s ease-out 0s;
-		opacity: 1;
-	}
-
-}
-#ab{
-	transform: scaleY(20) scaleX(30) rotateZ(-180deg) translateY(-44%) skewX(-45deg);
-}
-@media screen and (max-width: 1366px) and (min-width: 769px) {		
-	.light,.light-container,.house{
-		background-position: center bottom;
-		background-size: cover;
-		height: 100vh;
-	}
-	.light-container{
-		&.active{
-			transform: scale(1.08) translate(-0.2%, 2%);
-			transition: transform 5s ease-out 0s;
-
-			&.in{
-				transform: scale(1) translate(0, 0%);
-				transition: transform 5.5s linear;
-			}
-		}
 	}
 }

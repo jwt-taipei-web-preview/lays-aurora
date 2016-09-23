@@ -14,6 +14,7 @@ var activeSection = '';
 
 var pageSelector = '.page#';
 
+var scrollhold = false;
 
 app.ranges = {};
 app.pages = {};
@@ -31,6 +32,9 @@ app.videoTimeEnd = 0.8;
 // 網址為 gulp 或者 github 時 設定成debug 模式
 var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
+// document.write('<script src="https://jsconsole.com/js/remote.js?1ba21bf7-94b5-4be7-9d51-f88634e3f4bd"></script>');
+
+$('html').addClass('disabled');
 
 var share = {
 	facebook: function(href, title){
@@ -113,20 +117,25 @@ $(function(){
 			TweenMax.to('html, body', 0.5, {
 				scrollTop: $(pageSelector + anchor).offset().top,
 				onComplete: function(){
-					app.skip = false;
+					setTimeout(function(){
+						app.skip = false;
+						scrollhold = false;
+					}, 500);
 				}
 			});
 		}else if(anchor === 'term'){
 			TweenMax.to('html, body', 0.5, {
 				scrollTop: $(pageSelector + 'rule').offset().top,
 				onComplete: function(){
-					app.skip = false;
 				}
 			});
 			TweenMax.to($(pageSelector + 'rule .jspPane'), 0.5, {
 				top: $(pageSelector + 'rule .jspPane').offset().top - $('#term').offset().top,
 				onComplete: function(){
-					app.skip = false;
+					setTimeout(function(){
+						app.skip = false;
+						scrollhold = false;
+					}, 500);
 				}
 			});
 		}
@@ -180,6 +189,10 @@ $(function(){
 		var currentTop = $(window).scrollTop();
 		var currentButt = $(window).scrollTop() + $(window).height();
 		$.each(app.pages, function(name, init){
+
+			if(scrollhold){
+				return;
+			}
 
 			var id = $(pageSelector + name).attr('id'),
 
@@ -249,12 +262,14 @@ $(function(){
 	}, 100);
 
 	function pushState(name){
+		scrollhold = true;
 
 		// if(app.ismobile()){
 		// 	return false;
 		// }
-
-		history.pushState('#' + activeSection, document.title, '#' + activeSection);
+		if(history.pushState){
+			history.pushState('#' + activeSection, document.title, '#' + activeSection);
+		}
 		$('header nav a').filter(function(){
 			return $(this).attr('href') === '#' + activeSection;
 		}).addClass('active').siblings().removeClass('active');
@@ -281,7 +296,9 @@ $(function(){
 					$('.kvideo video').attr('data-play', 1);
 				}
 				if($('.kvideo video').attr('data-loaded')){
-					$('.kvideo video')[0].play();
+					if($('.kvideo video')[0].play){
+						$('.kvideo video')[0].play();
+					}
 				}
 			});
 			tl.addPause(2);

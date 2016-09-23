@@ -123,6 +123,25 @@ html{
 	.jspScrollable:focus{
 		outline:none;
 	}
+
+
+	&.disabled{		
+		.container{
+			.page{
+				display: none!important;
+			}
+		}
+		&:after{
+			background: center center url(../img/landing.png) no-repeat;
+			height: 100%;
+			opacity: 1;
+			z-index: 49;
+			@media screen and (max-width: 768px) {
+				background-image: url(../img/landing.png);
+				background-size: percentage(605/640) auto;
+			}
+		}
+	}
 }
 
 .browserupgrade {

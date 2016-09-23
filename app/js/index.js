@@ -31,18 +31,18 @@ app.pages.index = function($this){
 		}
 	};
 
-	$($this).on('mousemove', function(e){
-		if($(window).width() > 1024){
-			var ratio = (e.clientX - $(window).width() / 2) / $(window).width();
-			TweenMax.set('.house', {
-				transform: 'skewX(' + ratio * 0.09 + 'deg) rotateY(' + ratio * 0.15 + 'deg)'
-			});	
-		}else{
-			TweenMax.set('.house',{
-				transform: 'skewX(0deg)'
-			});		
-		}
-	});
+	// $($this).on('mousemove', function(e){
+	// 	if($(window).width() > 1024){
+	// 		var ratio = (e.clientX - $(window).width() / 2) / $(window).width();
+	// 		TweenMax.set('.house', {
+	// 			transform: 'skewX(' + ratio * 0.09 + 'deg) rotateY(' + ratio * 0.15 + 'deg)'
+	// 		});	
+	// 	}else{
+	// 		TweenMax.set('.house',{
+	// 			transform: 'skewX(0deg)'
+	// 		});		
+	// 	}
+	// });
 };
 
 function lighten( page ){

@@ -8,6 +8,7 @@
 app.pages.register = function($this){
 	// console.log('index initialized');
 	var captcha = app.guid().substring(0,6);
+	app.captcha = captcha;
 	$('.add', $this).on('mousedown', function(){
 		if($('.invoice-container', $this).length == 5){
 			alert('一次最多5筆');
@@ -72,7 +73,7 @@ app.pages.register = function($this){
    //  	if($('#g-recaptcha-response').val() == ''){    		
 			// msg = '請先完成圖片驗證';
    //  	}
-    	if($('#captcha').val() != captcha){    		
+    	if($('#captcha').val() != app.captcha){    		
 			msg = '驗證碼錯誤';
     	}
 		else if($('input[name=\'username\']').val()==''){
@@ -209,8 +210,8 @@ app.pages.register = function($this){
 		refreshCaptcha();
 	}).trigger('click');
 	function refreshCaptcha(){
-		var captcha = app.guid().substring(0,6);
-		$('.captcha').html($('<img>').attr('src', '//yummy.lays.com.tw.teectest.co.uk/showpic.php?ans_now=' + captcha));
+		app.captcha = app.guid().substring(0,6);
+		$('.captcha').html($('<img>').attr('src', '//yummy.lays.com.tw.teectest.co.uk/showpic.php?ans_now=' + app.captcha));
 	}
 };
 
