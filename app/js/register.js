@@ -211,7 +211,7 @@ app.pages.register = function($this){
 	}).trigger('click');
 	function refreshCaptcha(){
 		app.captcha = app.guid().substring(0,6);
-		$('.captcha').html($('<img>').attr('src', '//yummy.lays.com.tw.teectest.co.uk/showpic.php?ans_now=' + app.captcha));
+		$('.captcha').html($('<img>').attr('src', '/showpic.php?ans_now=' + app.captcha));
 	}
 };
 

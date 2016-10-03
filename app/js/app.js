@@ -34,20 +34,22 @@ var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
 // document.write('<script src="https://jsconsole.com/js/remote.js?1ba21bf7-94b5-4be7-9d51-f88634e3f4bd"></script>');
 
-$('html').addClass('disabled');
+// $('html').addClass('disabled');
+$('html').addClass('hide-award');
+
 
 var share = {
 	facebook: function(href, title){
-		href = encodeURIComponent(href || location.href.replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
+		href = encodeURIComponent((href|| location.href).replace(location.hash, '').replace(/[#]/,'') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
 		title = encodeURIComponent(title || document.title);
 		window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
 	},
 	googleplus: function(href){
-		href = encodeURIComponent(href || location.href.replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
+		href = encodeURIComponent((href || location.href).replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
 		window.open('https://plus.google.com/share?url=' + href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 	},
 	email: function(href, title){
-		href = encodeURIComponent(href || location.href.replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
+		href = encodeURIComponent((href || location.href).replace(location.hash, '') + '?utm_source=fbshare&utm_medium=fb&utm_campaign=yummycampaign');
 		title = encodeURIComponent(title || document.title);
 		var body = encodeURIComponent(''+href+' #' +title+'');
 		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
@@ -346,3 +348,6 @@ app.guid = function () {
 
 
 
+
+
+document.write('<!--cap--><script src="//cdn.doublemax.net/js/rtid.js"></script><script> clickforce_rtid("56000");</script><!--eland--><script src="//dmp.eland-tech.com/dmpreceiver/eland_tracker.js"></script><script>var dataJson={\'source\':\'laysYummy\',\'trackType\':\'view\',\'trackSubfolderDepth\':3,\'targetType\':\'usual\'};ElandTracker.Track(dataJson);</script><!--GA--><script> (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');  ga(\'create\', \'UA-84106238-1\', \'auto\',{\'name\': \'CFTracker\'});  ga(\'require\', \'displayfeatures\');  ga(\'CFTracker.send\', \'pageview\');</script>');

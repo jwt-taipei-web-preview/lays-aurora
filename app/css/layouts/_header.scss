@@ -239,3 +239,20 @@ html.disabled{
 		}
 	}
 }
+html.hide-award{
+	header{
+		nav{
+			a{
+				&:nth-child(3){
+					//停用
+					pointer-events: none;
+					cursor: default;
+				}
+
+			}
+		}
+	}
+	#award{
+		display: none;
+	}
+}
