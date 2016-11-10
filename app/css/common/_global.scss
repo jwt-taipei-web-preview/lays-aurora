@@ -4,6 +4,21 @@
   color: #000;
   padding: 0.2em 0;
 }
+@mixin keyframes($animationName)
+{
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName}  {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
 /* Space out content a bit */
 body {
 	-webkit-font-smoothing: antialiased;
@@ -119,6 +134,23 @@ html{
 			height: 100%;
 			opacity: 1;
 		}
+		body{
+			&:after{
+					content: '';
+					position: fixed;
+					display: block;
+					width: 30px;
+					height: 30px;
+					top: calc(50% - 15px);
+					left: calc(50% - 15px);
+					border-radius: 80px;
+					box-shadow: 0 2px 0 0 #59ebff;
+					@include animation(
+						uil-ring-anim 1s linear infinite
+					);
+					z-index: 201;
+			}
+		}
 	}
 	.jspScrollable:focus{
 		outline:none;
@@ -226,5 +258,16 @@ html{
 			min-height: vwsm(960);
 			min-width: 100%;
 		}
+	}
+}
+
+
+@include keyframes( uil-ring-anim )
+{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

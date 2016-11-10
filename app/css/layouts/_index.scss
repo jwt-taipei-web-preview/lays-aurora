@@ -202,12 +202,15 @@
 	}
 }
 .kvideo{
+	min-width: 100%;
+	min-height: 100%;
 	min-width: 100vw;
 	min-height: 100vh;
 	position: fixed;
 	bottom:0;
 	left:0;
 	z-index: 0;
+	background: url(../img/index/poster.jpg) bottom center;
 	background: url(../img/index/poster.jpg) bottom center/cover;
 	video{
 		position: absolute;

@@ -18,7 +18,7 @@ app.pages.index = function($this){
 	// $this.addClass('in');
 
 	$('.kvideo video')[0].ontimeupdate = function(e){
-		console.log(e.target.currentTime);
+		// console.log(e.target.currentTime);
 		if($('.kvideo video').attr('data-play') == '1' && Math.round(e.target.currentTime - app.videoTimeEnd) >= 9 ) {		
 			e.target.pause();
 		}

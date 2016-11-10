@@ -5,7 +5,7 @@
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 
-/*global  $, TweenMax, fontSpy, ga, TimelineMax */
+/*global  $, TweenMax, ga, TimelineMax */
 var app = {};
 
 var scrollTop = 0;
@@ -229,38 +229,35 @@ $(function(){
 
 	app.scrollTop = scrollTop;
 
+	var video = $('.kvideo');
+	// video[0].onprogress = function(e) {
+	// 	console.log(e);
+	// 	// console.log(this);
+	// 	console.log(this.buffered.start(0));
+	// };
+		// console.log(video);
 
 	// 檢查字形
 	var checkFont = setInterval(function(){
-		fontSpy('Noto Sans TC', {
-			glyphs: '\u5803',
-			success: function() {
-				//alert("My Icons loaded successfully");
-				var video = $('.kvideo');
-				video.attr('onloadstart', function() {
 
-				});
-				video.attr('oncanplaythrough', function() {
-	    			$('.kvideo video').attr('data-loaded', true);
-					setTimeout(function(){
-						pushState('index');
-						$('html').removeClass('loading');
-						// tlStack.push(l($('.container .light1'), 1, 0) );
-						// tlStack.push(l($('.container .light2'), 2, 1.5) );
-						// tlStack.push(bg($('.container .light-container'), 10, 1) );
-					}, 50);
-				});
-				
-				// $('.kvideo video')[0].oncanplaythrough = function() {
-				//     $('.kvideo video').attr('data-loaded', true);
-				// };
-				clearInterval(checkFont);
-			},
-			failure: function() {
-				//alert("My Icons failed to load");
-				console.log('failed to load font');
-			}
-		});
+		if($('html.video').length){
+			video.attr('onloadstart', function() {
+
+			});
+			video.attr('oncanplaythrough', function() {
+				$('.kvideo video').attr('data-loaded', true);
+				setTimeout(function(){
+					pushState('index');
+					$('html').removeClass('loading');
+				}, 50);
+			});
+		}else{
+			$('html').removeClass('loading');
+			$(pageSelector + 'index').addClass('in');
+			$('figure.poster').addClass('in');
+		}
+		
+		clearInterval(checkFont);
 	}, 100);
 
 	function pushState(name){
@@ -283,7 +280,11 @@ $(function(){
 			ga('send', 'pageview', 'pv_' + activeSection);
 		}
 		if(name === 'index'){
-			$('.poster').removeClass('in');
+			if($('html.video').length){
+				$('.poster').removeClass('in');
+			}else{
+				$(pageSelector + name).addClass('in');
+			}
 			var tl = new TimelineMax({
 				pause: true,
 				onComplete: function(){
@@ -298,8 +299,10 @@ $(function(){
 					$('.kvideo video').attr('data-play', 1);
 				}
 				if($('.kvideo video').attr('data-loaded')){
-					if($('.kvideo video')[0].play){
-						$('.kvideo video')[0].play();
+					if($('html.video').length){
+						if($('.kvideo video')[0].play){
+							$('.kvideo video')[0].play();
+						}
 					}
 				}
 			});
@@ -344,10 +347,23 @@ app.guid = function () {
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
     s4() + '-' + s4() + s4() + s4();
 };
-
-
-
-
-
-
-document.write('<!--cap--><script src="//cdn.doublemax.net/js/rtid.js"></script><script> clickforce_rtid("56000");</script><!--eland--><script src="//dmp.eland-tech.com/dmpreceiver/eland_tracker.js"></script><script>var dataJson={\'source\':\'laysYummy\',\'trackType\':\'view\',\'trackSubfolderDepth\':3,\'targetType\':\'usual\'};ElandTracker.Track(dataJson);</script><!--GA--><script> (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');  ga(\'create\', \'UA-84106238-1\', \'auto\',{\'name\': \'CFTracker\'});  ga(\'require\', \'displayfeatures\');  ga(\'CFTracker.send\', \'pageview\');</script>');
+function clickforce_rtid(rtid){
+	var i = document.createElement('iframe');
+    i.setAttribute('src', '//m.doublemax.net/rt/rl?rtid='+rtid);
+    i.setAttribute('width', 0);
+    i.setAttribute('height', 0);
+    i.setAttribute('style', 'display:none;');
+    document.body.appendChild(i);
+	var i = document.createElement('iframe');
+    i.setAttribute('src', '//clg.doublemax.net/adserver/conversion/clickAction?aid='+rtid);
+    i.setAttribute('width', 0);
+    i.setAttribute('height', 0);
+    i.setAttribute('style', 'display:none;');
+    document.body.appendChild(i);
+    var i = document.createElement('iframe');
+    i.setAttribute('src', '//lg.doublemax.net/adserver/conversion/impressAction?aid='+rtid);
+    i.setAttribute('width', 0);
+    i.setAttribute('height', 0);
+    i.setAttribute('style', 'display:none;');
+    document.body.appendChild(i); 
+}

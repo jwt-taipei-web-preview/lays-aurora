@@ -6,7 +6,6 @@
     "modernizr": "~2.8.1",
     "gsap": "^1.19.0",
     "font-awesome": "fontawesome#^4.6.3",
-    "lodash": "^4.13.1",
     "jScrollPane": "^2.0.23",
     "jQuery-FontSpy": "fontspy#^3.0.0",
     "detectizr": "^2.2.0"

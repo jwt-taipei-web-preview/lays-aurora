@@ -10,24 +10,25 @@ app.modules.ga = function(){
 
 
 	if($('html').hasClass('mobile')){
-
 		$('a').filter(function(){
-			return $(this).hasAttr('data-ga-mobile');
+			return $(this).hasAttr('data-ga-mobile') || $(this).hasAttr('data-ga');
 		}).on('click', function(){
+			var label = $(this).attr('data-ga-mobile') || 'm_' + $(this).attr('data-ga');
 			ga('send', 'event', {
 				eventCategory: 'event',
 				eventAction: 'click',
-				eventLabel: $(this).attr('data-ga-mobile')
+				eventLabel: label
 			});
 		});
 	}else{
 		$('a').filter(function(){
-			return $(this).hasAttr('data-ga');
+			return $(this).hasAttr('data-ga-mobile') || $(this).hasAttr('data-ga');
 		}).on('click', function(){
+			var label = $(this).attr('data-ga') || $(this).attr('data-ga-mobile').replace('m_','');
 			ga('send', 'event', {
 				eventCategory: 'event',
 				eventAction: 'click',
-				eventLabel: $(this).attr('data-ga')
+				eventLabel: label
 			});
 		});
 	}

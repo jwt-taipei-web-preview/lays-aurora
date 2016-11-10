@@ -53,29 +53,31 @@ app.pages.register = function($this){
 	var invoiceReg 	= /^[a-zA-Z]{2}-?\d{8}$/g;
 
 	$('form', $this).on('submit',function(){
+    	var invoice = $('input[name=\'invoice[]\']').map(function(){return $(this).val(); }).get();
 
-    	var msg='';
-    	if($('input[name=\'invoice[]\']').eq(0).val()=='')
-    		msg = '請填寫發票號碼';
-    	else{
-    		$('input[name=\'invoice[]\']').each(function(){
-    			if($(this).val()!='' && !$(this).val().match(invoiceReg)){
-    				msg = '請確認發票號碼格式';
-    				return false;
-    			}
-    		});
-    	}
-    	if(msg!=''){
-    		alert(msg);
-    		return false;
-    	}
-    	msg='';
-   //  	if($('#g-recaptcha-response').val() == ''){    		
+		var msg='';
+		if(invoice == ''){
+			msg = '請填寫發票號碼';
+		}else{
+			$('input[name=\'invoice[]\']').each(function(){
+				if($(this).val().replace(/\s*(\S+)\s*/ig,'$1') != '' 
+					&& !$(this).val().match(invoiceReg)){
+					msg = '請確認發票號碼格式';
+					return false;
+				}
+			});
+		}
+		if(msg != ''){
+			alert(msg);
+			return false;
+		}
+		msg='';
+	//  	if($('#g-recaptcha-response').val() == ''){    		
 			// msg = '請先完成圖片驗證';
-   //  	}
-    	if($('#captcha').val() != app.captcha){    		
+	//  	}
+		if($('#captcha').val() != app.captcha){    		
 			msg = '驗證碼錯誤';
-    	}
+		}
 		else if($('input[name=\'username\']').val()==''){
 			msg = '請填寫姓名';
 		}
@@ -96,14 +98,13 @@ app.pages.register = function($this){
 			return false;
 		}
 
-    	// ga('send','event','button','click','send');
-    	// console.log('send');
-    	var invoice = $('input[name=\'invoice[]\']').map(function(){return $(this).val(); }).get();
-    	$.ajax({
-            url: './ajax/upload.php',
-            type: 'POST',
-            data: { 
-            	invoice: invoice,
+		// ga('send','event','button','click','send');
+		// console.log('send');
+		$.ajax({
+			url: './ajax/upload.php',
+			type: 'POST',
+			data: { 
+				invoice: invoice,
 				username: $('input[name=\'username\']').val(),
 				phone: $('input[name=\'phone\']').val(),
 				email: $('input[name=\'email\']').val(),
@@ -125,7 +126,7 @@ app.pages.register = function($this){
 	});
 
 
-	$('.share').unbind('click').on('click', function(){share.facebook(); return false; });
+	$('.share').on('click', function(){share.facebook(); });
 
 	$(document).on('input keyup', 'textarea[maxlength]', function(e) {
 		// maxlength attribute does not in IE prior to IE10
