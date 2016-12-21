@@ -35,7 +35,9 @@ var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 // document.write('<script src="https://jsconsole.com/js/remote.js?1ba21bf7-94b5-4be7-9d51-f88634e3f4bd"></script>');
 
 // $('html').addClass('disabled');
-$('html').addClass('hide-award');
+// $('html').addClass('hide-award');
+$('html').addClass('hide-form');
+
 
 
 var share = {
@@ -77,6 +79,9 @@ if (location.hash) {
 }
 
 $(function(){
+
+	$('.btn-register.blink').attr('href', '#award');
+	
     // 定義每個section
 	$.each(app.modules, function(name, init){
 		init();
